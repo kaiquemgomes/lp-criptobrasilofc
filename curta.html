@@ -8,8 +8,8 @@
   <meta name="robots" content="noindex, nofollow" />
   <title>Rede Neural Vault | Vault Capital</title>
   <meta name="description" content="O algoritmo construído pelo time de especialistas da Vault que define quando seu capital fica em Bitcoin e quando vai para o dólar, e executa as ordens direto na sua corretora." />
-  <meta property="og:title" content="De janeiro a setembro de 2026, o Bitcoin caiu 5,8%. A Rede Neural Vault rendeu 53,0%." />
-  <meta property="og:description" content="Janeiro a março em simulação (backtest). Abril a setembro com capital real." />
+  <meta property="og:title" content="De janeiro a outubro de 2026, o Bitcoin caiu 4,4%. A Rede Neural Vault rendeu 56,1%." />
+  <meta property="og:description" content="Janeiro a março em simulação (backtest). Abril em diante com capital real." />
   <meta property="og:type" content="website" />
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
   <link rel="stylesheet" href="assets/css/fonts.css" />
@@ -333,13 +333,44 @@
     .ring .bg { stroke: rgba(255,255,255,.08); }
     .ring .fg.halo { stroke-width: 14; stroke-opacity: .14; }
     .ring .fg { stroke: var(--yellow); stroke-linecap: round; stroke-dasharray: 201; stroke-dashoffset: 201; transition: stroke-dashoffset 1.4s cubic-bezier(.2,.7,.2,1); }
-    .visible .ring .fg, .ring.static .fg { stroke-dashoffset: 26; }
+    .visible .ring .fg, .ring.static .fg { stroke-dashoffset: 24; } /* 88% de 201 */
     .bars { width: 100%; display: flex; flex-direction: column; gap: 12px; }
     .bar { display: grid; grid-template-columns: 54px 1fr 46px; align-items: center; gap: 10px; font-size: 12px; color: var(--t3); }
     .bar u { display: block; height: 8px; border-radius: 8px; text-decoration: none; }
     .bar b { font-weight: 600; font-size: 13px; text-align: right; }
     .bar.g u { width: 100%; background: linear-gradient(90deg, rgba(60,207,145,.4), var(--pos)); } .bar.g b { color: var(--pos); }
-    .bar.r u { width: 73.7%; background: linear-gradient(90deg, rgba(239,111,108,.4), var(--neg)); } .bar.r b { color: var(--neg); }
+    .bar.r u { width: 75.7%; background: linear-gradient(90deg, rgba(239,111,108,.4), var(--neg)); } .bar.r b { color: var(--neg); }
+    .ops-card { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .8fr) minmax(0, 1.05fr); padding: 0; }
+    .ops-z { position: relative; padding: 30px 32px; display: flex; flex-direction: column; gap: 18px; justify-content: space-between; }
+    .ops-z + .ops-z { border-left: 1px solid var(--line); }
+    .ops-card .opdots { grid-template-columns: repeat(8, 12px); }
+    .ops-line { font-size: 14.5px; line-height: 1.5; color: var(--t2); margin: 0; }
+    .ops-line strong { font: 600 30px/1 var(--f-head); letter-spacing: -0.04em; color: var(--white); margin-right: 6px; vertical-align: -3px; }
+    .ops-leg { display: block; margin-top: 8px; font-size: 13px; }
+    .ops-leg em { font-style: normal; font-weight: 500; margin-right: 12px; white-space: nowrap; }
+    .ops-leg em::before { content: ''; display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 6px; vertical-align: 1px; background: currentColor; }
+    .ops-leg .g { color: var(--pos); } .ops-leg .r { color: var(--neg); }
+    .ops-hit-row { display: flex; align-items: center; gap: 18px; }
+    .ops-hit .stat-num { font-size: 56px; margin: 0; }
+    .ops-pay .bars { gap: 10px; }
+    @media (max-width: 960px) {
+      .ops-card { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+      .ops-count { grid-column: 1 / -1; border-bottom: 1px solid var(--line); }
+      .ops-z + .ops-z { border-left: 0; }
+      .ops-pay { border-left: 1px solid var(--line) !important; }
+    }
+    @media (max-width: 560px) {
+      .ops-card { grid-template-columns: minmax(0, 1fr); }
+      .ops-z { padding: 22px 20px; gap: 14px; }
+      .ops-z + .ops-z { border-top: 1px solid var(--line); }
+      .ops-count { border-bottom: 0; }
+      .ops-pay { border-left: 0 !important; }
+      .ops-card .opdots { grid-template-columns: repeat(16, minmax(0, 1fr)); gap: 5px; }
+      .ops-card .opdots i { width: 100%; height: auto; aspect-ratio: 1; }
+      .ops-hit-row { gap: 14px; }
+      .ops-hit .stat-num { font-size: 44px; }
+      .ops-hit .ring { width: 52px; height: 52px; }
+    }
     .disclaimer { font-size: 12px; line-height: 1.7; color: var(--t4); margin-top: 22px; max-width: 980px; }
 
     /* Vídeo */
@@ -577,8 +608,8 @@
         <div class="beam" style="left:-6%"></div>
         <div>
           <span class="tag"><i></i>Rede Neural Vault</span>
-          <h1 class="hero-h1">De janeiro a setembro de 2026, o Bitcoin caiu 5,8%.
-            <span>A Rede Neural Vault rendeu 53,0%.</span></h1>
+          <h1 class="hero-h1">De janeiro a outubro de 2026, o Bitcoin caiu 4,4%.
+            <span>A Rede Neural Vault rendeu 56,1%.</span></h1>
           <p class="lead hero-sub">Quem investe em Bitcoin conhece duas frustrações: esperar um fundo que não chega e ver o topo passar sem vender. A Rede Neural Vault foi construída por 6 matemáticos, físicos e programadores para tirar essa decisão das suas mãos. Ela define quando o seu capital fica em Bitcoin e quando vai para o dólar, e executa as ordens direto na sua corretora.</p>
         </div>
 
@@ -661,8 +692,8 @@
   <div class="wrap">
     <div class="sec-head">
       <span class="tag fade-in"><i></i>Resultados em 2026</span>
-      <h2 class="h2 fade-in">Das 15 operações feitas em 2026, 13 fecharam no positivo.</h2>
-      <p class="lead fade-in d1">De janeiro a setembro, a Rede Neural Vault fechou 15 trocas entre Bitcoin e dólar. As 13 vencedoras renderam 3,8% em média. As 2 perdedoras custaram 2,8% em média. O resultado acumulado foi de +53,0%, num período em que o Bitcoin caiu 5,8%.</p>
+      <h2 class="h2 fade-in">Das 16 operações feitas em 2026, 14 fecharam no positivo.</h2>
+      <p class="lead fade-in d1">De janeiro a outubro, a Rede Neural Vault fechou 16 trocas entre Bitcoin e dólar. As 14 vencedoras renderam 3,7% em média. As 2 perdedoras custaram 2,8% em média. O resultado acumulado foi de +56,1%, num período em que o Bitcoin caiu 4,4%.</p>
     </div>
 
     <div class="res-top">
@@ -671,20 +702,20 @@
         <div class="dots" style="--dx:80%;--dy:20%"></div>
         <div>
           <span class="cmp-label">Rede Neural Vault</span>
-          <div class="cmp-big num">+53,0%</div>
-          <span class="cmp-period">Janeiro a setembro de 2026</span>
+          <div class="cmp-big num">+56,1%</div>
+          <span class="cmp-period">Janeiro a outubro de 2026</span>
         </div>
-        <div class="cmp-vs"><span>Bitcoin no mesmo período</span><strong class="num">−5,8%</strong></div>
+        <div class="cmp-vs"><span>Bitcoin no mesmo período</span><strong class="num">−4,4%</strong></div>
       </div>
       <div class="card chart-card fade-in d1">
         <div class="glow w" style="width:400px;height:300px;right:-100px;top:-120px"></div>
         <h3>Rentabilidade mês a mês</h3>
-        <p>Resultado da Rede Neural Vault em cada mês de 2026. <span class="g">Verde</span> é mês positivo, <span class="r">vermelho</span> é mês negativo. De janeiro a março, simulação. De abril a setembro, capital real.</p>
-        <div class="chart" id="chart" role="img" aria-label="Rentabilidade mensal da Rede Neural Vault em 2026: janeiro −0,01%, fevereiro +11,52%, março +15,48% (simulação), abril +3,96%, maio +2,52%, junho −1,70%, julho +2,43%, agosto +1,50%, setembro +8,40%."></div>
+        <p>Resultado da Rede Neural Vault em cada mês de 2026. <span class="g">Verde</span> é mês positivo, <span class="r">vermelho</span> é mês negativo. De janeiro a março, simulação. De abril em diante, capital real.</p>
+        <div class="chart" id="chart" role="img" aria-label="Rentabilidade mensal da Rede Neural Vault em 2026: janeiro −0,01%, fevereiro +11,52%, março +15,48% (simulação), abril +3,96%, maio +2,52%, junho −1,70%, julho +2,43%, agosto +1,50%, setembro +8,40%, outubro +1,93%."></div>
       </div>
     </div>
 
-    <p class="disclaimer fade-in">Resultados de janeiro a setembro de 2026, líquidos de taxas. Janeiro a março são simulação (backtest): o resultado que o algoritmo teria obtido sobre dados históricos, sem capital real. De abril em diante, operações com capital real. Rentabilidade passada não é garantia de rentabilidade futura. Investimentos em criptoativos envolvem risco, inclusive de perda do capital investido.</p>
+    <p class="disclaimer fade-in">Resultados de janeiro a outubro de 2026 (outubro parcial), líquidos de taxas. Janeiro a março são simulação (backtest): o resultado que o algoritmo teria obtido sobre dados históricos, sem capital real. De abril em diante, operações com capital real. Rentabilidade passada não é garantia de rentabilidade futura. Investimentos em criptoativos envolvem risco, inclusive de perda do capital investido.</p>
   </div>
 </section>
 
@@ -939,8 +970,8 @@ const CRM_ENDPOINT = '';
    Números do painel, líquidos de taxas. jan–mar = simulação (backtest).
    ===================================================================== */
 const CHART = {
-  labels: ['jan','fev','mar','abr','mai','jun','jul','ago','set'],
-  values: [-0.01, 11.52, 15.48, 3.96, 2.52, -1.70, 2.43, 1.50, 8.40],
+  labels: ['jan','fev','mar','abr','mai','jun','jul','ago','set','out'],
+  values: [-0.01, 11.52, 15.48, 3.96, 2.52, -1.70, 2.43, 1.50, 8.40, 1.93],
   simEnd: 2 // índice de março: jan–mar são simulação
 };
 const fmt = v => (v > 0 ? '+' : v < 0 ? '−' : '') + Math.abs(v).toFixed(2).replace('.', ',') + '%';
