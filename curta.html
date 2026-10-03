@@ -498,6 +498,33 @@
       .next-steps li { font-size: 15.5px; }
     }
 
+    /* ===== Curta: ilustrações compactas dos 3 passos ===== */
+    .steps-card .steps { align-items: start; }
+    .step-viz { position: relative; height: 156px; margin-bottom: 22px; }
+    .step-viz .panel { position: absolute; }
+    .step-viz .row { padding: 9px 14px; font-size: 13.5px; gap: 10px; }
+    .step-viz .panel-h { padding: 10px 14px; font-size: 13.5px; }
+    .step-viz .ico { width: 16px; height: 16px; }
+    .step-viz .read-panel { left: 0; right: 0; top: 0; }
+    .step-viz .scan { width: 44px; }
+    .step-viz .orb { width: 78px; height: 78px; top: 0; }
+    .step-viz .orb::after { inset: -14px; }
+    .step-viz .orb b { font-size: 30px; }
+    .step-viz .decide-panel { left: 0; right: 0; top: 52px; padding-top: 22px; }
+    .step-viz .exec-side { left: 0; top: 0; width: 50px; height: 156px; gap: 14px; padding-top: 12px; }
+    .step-viz .exec-side img { width: 26px; height: 26px; }
+    .step-viz .exec-main { left: 62px; right: 0; top: 0; height: 156px; }
+    .step-viz .exec-main .row { font-size: 13.5px; }
+    @media (max-width: 960px) {
+      .steps-card .steps > div { display: grid; grid-template-columns: minmax(0, 1fr); }
+      .step-viz { max-width: 380px; width: 100%; }
+    }
+    @media (max-width: 560px) {
+      .step-viz { margin-bottom: 18px; }
+      .step-viz .orb { width: 70px; height: 70px; }
+      .step-viz .decide-panel { top: 46px; }
+    }
+
     /* Entrada */
     .js .fade-in { opacity: 0; transform: translateY(14px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); }
     .js .fade-in.visible { opacity: 1; transform: none; }
@@ -666,16 +693,44 @@
       <div class="dots" style="--dx:85%;--dy:20%"></div>
       <div class="steps">
         <div>
+          <div class="step-viz" aria-hidden="true">
+            <div class="panel read-panel">
+              <div class="panel-h">Leitura do mercado <small>contínua</small></div>
+              <div class="row"><span><svg class="ico" viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg>Preço</span><i class="scan"></i></div>
+              <div class="row"><span><svg class="ico" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Indicadores técnicos</span><i class="scan"></i></div>
+              <div class="row"><span><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><path d="M10 6.5h4a3 3 0 0 1 3 3V14"/></svg>Dados on-chain</span><i class="scan"></i></div>
+            </div>
+          </div>
           <span class="fact-n">01</span>
           <h3>Ela lê o mercado.</h3>
           <p>Indicadores de preço, técnicos e on-chain do Bitcoin, o tempo todo, com a mesma frieza na queda e na alta.</p>
         </div>
         <div>
+          <div class="step-viz" aria-hidden="true">
+            <div class="orb"><b>₿</b><b>$</b></div>
+            <div class="panel decide-panel">
+              <div class="row"><span>Bitcoin</span><span class="state st-a">100%</span></div>
+              <div class="row"><span>Dólar</span><span class="state st-b">100%</span></div>
+            </div>
+          </div>
           <span class="fact-n">02</span>
           <h3>Ela decide.</h3>
           <p>Bitcoin ou dólar. Em mercado de queda, ela tende a passar mais tempo no dólar. Em mercado de alta, mais tempo em Bitcoin.</p>
         </div>
         <div>
+          <div class="step-viz" aria-hidden="true">
+            <div class="panel exec-side">
+              <img src="assets/img/vault-v-mark.svg" alt="" />
+              <svg class="ico" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.4 8.3 8 9 4.6-.7 8-4 8-9V6z"/></svg>
+              <svg class="ico" viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/></svg>
+              <svg class="ico" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div class="panel exec-main">
+              <div class="panel-h">Sua corretora</div>
+              <div class="row"><i class="ok"></i>Ordem executada</div>
+              <div class="row"><svg class="ico" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Conta no seu nome</div>
+            </div>
+          </div>
           <span class="fact-n">03</span>
           <h3>Ela executa na sua conta.</h3>
           <p>A ordem vai direto para a sua corretora. Você acompanha cada operação e não precisa fazer nada.</p>
