@@ -339,7 +339,7 @@
     .bar u { display: block; height: 8px; border-radius: 8px; text-decoration: none; }
     .bar b { font-weight: 600; font-size: 13px; text-align: right; }
     .bar.g u { width: 100%; background: linear-gradient(90deg, rgba(60,207,145,.4), var(--pos)); } .bar.g b { color: var(--pos); }
-    .bar.r u { width: 75.7%; background: linear-gradient(90deg, rgba(239,111,108,.4), var(--neg)); } .bar.r b { color: var(--neg); }
+    .bar.r u { width: 75.0%; background: linear-gradient(90deg, rgba(239,111,108,.4), var(--neg)); } .bar.r b { color: var(--neg); }
     .ops-card { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .8fr) minmax(0, 1.05fr); padding: 0; }
     .ops-z { position: relative; padding: 30px 32px; display: flex; flex-direction: column; gap: 18px; justify-content: space-between; }
     .ops-z + .ops-z { border-left: 1px solid var(--line); }
@@ -769,7 +769,7 @@
         <div class="glow w" style="width:400px;height:300px;right:-100px;top:-120px"></div>
         <h3>Rentabilidade mês a mês</h3>
         <p>Resultado da Rede Neural Vault em cada mês de 2026. <span class="g">Verde</span> é mês positivo, <span class="r">vermelho</span> é mês negativo. De janeiro a março, simulação. De abril em diante, capital real.</p>
-        <div class="chart" id="chart" role="img" aria-label="Rentabilidade mensal da Rede Neural Vault em 2026: janeiro −0,01%, fevereiro +11,52%, março +15,48% (simulação), abril +3,96%, maio +2,52%, junho −1,70%, julho +2,43%, agosto +1,50%, setembro +8,40%, outubro +1,93%."></div>
+        <div class="chart" id="chart" role="img" aria-label="Rentabilidade mensal da Rede Neural Vault em 2026: janeiro −0,01%, fevereiro +11,52%, março +16,34% (simulação), abril +3,96%, maio +2,52%, junho −1,91%, julho +2,43%, agosto +1,50%, setembro +8,57%, outubro +1,93%."></div>
       </div>
     </div>
 
@@ -794,7 +794,7 @@
             <div class="bar g"><span>ganho</span><u></u><b>+3,7%</b></div>
             <div class="bar r"><span>perda</span><u></u><b>−2,8%</b></div>
           </div>
-          <p class="ops-line">Payoff de <strong class="num">1,34</strong></p>
+          <p class="ops-line">Payoff de <strong class="num">1,33</strong></p>
         </div>
       </div>
     </div>
@@ -1112,7 +1112,7 @@ const CRM_ENDPOINT = '';
    ===================================================================== */
 const CHART = {
   labels: ['jan','fev','mar','abr','mai','jun','jul','ago','set','out'],
-  values: [-0.01, 11.52, 15.48, 3.96, 2.52, -1.70, 2.43, 1.50, 8.40, 1.93],
+  values: [-0.01, 11.52, 16.34, 3.96, 2.52, -1.91, 2.43, 1.50, 8.57, 1.93],
   simEnd: 2 // índice de março: jan–mar são simulação
 };
 const fmt = v => (v > 0 ? '+' : v < 0 ? '−' : '') + Math.abs(v).toFixed(2).replace('.', ',') + '%';
