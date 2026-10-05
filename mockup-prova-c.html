@@ -102,13 +102,16 @@ h1{font:800 26px/1.15 var(--f-head);letter-spacing:-.03em;margin-bottom:6px}
 .ln-foot b{color:var(--yellow);font-size:9px;line-height:1.9}
 .frame.d .ln-foot{flex-direction:row;flex-wrap:wrap;gap:6px 26px;margin-top:14px;padding-top:13px}
 .frame.d .ln-foot span{font-size:13.5px}
-.gcards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
-.gcard{display:flex;flex-direction:column;gap:9px;padding:12px 13px 11px;border-radius:14px;background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.018));border:1px solid rgba(255,255,255,.09);box-shadow:inset 0 1px 0 rgba(255,255,255,.06)}
-.gcard i{display:flex;width:26px;height:26px;align-items:center;justify-content:center;border-radius:8px;background:rgba(239,204,45,.12);color:var(--yellow)}
-.gcard svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
-.gcard span{font-size:12.5px;line-height:1.35;color:var(--t1);text-wrap:pretty}
-.frame.d .gcards{gap:10px}.frame.d .gcard{flex-direction:row;align-items:center;gap:12px;padding:12px 16px}
-.frame.d .gcard span{font-size:13.5px}
+/* [K 05/10] C2 compacto: cada card em uma linha (ícone + frase); empilhados no celular, lado a lado no desktop */
+.gcards{display:flex;flex-direction:column;gap:6px}
+.gcard{display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.018));border:1px solid rgba(255,255,255,.09);box-shadow:inset 0 1px 0 rgba(255,255,255,.06)}
+.gcard i{display:flex;flex-shrink:0;width:22px;height:22px;align-items:center;justify-content:center;border-radius:7px;background:rgba(239,204,45,.12);color:var(--yellow)}
+.gcard svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.gcard span{font-size:12.5px;line-height:1.3;color:var(--t1);white-space:nowrap;letter-spacing:-.005em}
+.frame.d .gcards{flex-direction:row;gap:8px}.frame.d .gcard{padding:9px 14px}
+.frame.d .gcard span{font-size:13px}
+.frame.d.wide{width:740px}
+@media (max-width:380px){.gcard span{font-size:11px}}  /* 360px: a 1ª frase ainda cabe em uma linha */
 .formph.on{opacity:1}.formph.on>span,.formph.on>i,.formph.on>em{opacity:.4}
 .f-assure{display:flex;flex-direction:column;gap:5px;margin-top:4px;padding-top:10px;border-top:1px solid var(--line)}
 .f-assure span{display:flex;gap:8px;font-size:12.5px;line-height:1.4;color:var(--t1)}
@@ -145,7 +148,7 @@ h1{font:800 26px/1.15 var(--f-head);letter-spacing:-.03em;margin-bottom:6px}
   </div>
   <div class="ln-x"><span style="left:0">jan</span><span style="left:32.97%">abr</span><span style="left:100%">out</span></div>
 <div class="ln-foot"><span><b>◆</b>O dinheiro fica na sua corretora, no seu nome.</span><span><b>◆</b>Sem fidelidade nem período mínimo.</span></div></figure></div></div>
-    <div class="frame d" data-l="Desktop · coluna esquerda"><div class="atmo"><i></i></div><div class="stack"><figure class="pcard ln" aria-label="Crescimento do capital: de janeiro a outubro de 2026, a Rede Neural Vault acumulou +56,1% e o Bitcoin caiu 4,4%">
+    <div class="frame d " data-l="Desktop · coluna esquerda"><div class="atmo"><i></i></div><div class="stack"><figure class="pcard ln" aria-label="Crescimento do capital: de janeiro a outubro de 2026, a Rede Neural Vault acumulou +56,1% e o Bitcoin caiu 4,4%">
   <div class="ln-plot">
     <div class="ln-sim" style="width:32.97%"><span>Simulação</span></div>
     <div class="ln-real" style="left:32.97%"><span>Capital real</span></div>
@@ -166,8 +169,8 @@ h1{font:800 26px/1.15 var(--f-head);letter-spacing:-.03em;margin-bottom:6px}
   <p class="notes"><b>Prós:</b> nada solto entre o formulário e o gráfico; zero elementos novos. <b>Contra:</b> as garantias ficam depois do gráfico, então no celular aparecem um pouco mais abaixo do botão.</p>
 </section>
 <section class="model" id="modelo-c2">
-  <h2><em>C2</em>Dois mini-cards com ícone</h2>
-  <p class="why">Entre o formulário e o gráfico, dois cards pequenos no estilo da barra de credenciais: ícone dourado (escudo e cadeado aberto) e a frase. Deixa de ser texto solto e vira componente.</p>
+  <h2><em>C2</em>Dois mini-cards com ícone (escolhido, compacto)</h2>
+  <p class="why">Entre o formulário e o gráfico, dois cards de uma linha só: ícone dourado (escudo e cadeado aberto) e a frase. No celular ficam empilhados; no desktop, lado a lado na largura real da coluna esquerda (~700px a 1440).</p>
   <div class="frames ">
     <div class="frame m" data-l="Celular · 390px"><div class="atmo"><i></i></div><div class="stack"><div class="formph"><span>São 2 passos.</span><i></i><i></i><em>Continuar</em></div><div class="gcards">
   <div class="gcard"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5.2c0 4.4-2.9 8.3-7 9.8-4.1-1.5-7-5.4-7-9.8V6l7-3z"/><path d="M9 12.2l2 2 4-4.2"/></svg></i><span>O dinheiro fica na sua corretora, no seu nome.</span></div>
@@ -190,7 +193,7 @@ h1{font:800 26px/1.15 var(--f-head);letter-spacing:-.03em;margin-bottom:6px}
   </div>
   <div class="ln-x"><span style="left:0">jan</span><span style="left:32.97%">abr</span><span style="left:100%">out</span></div>
 </figure></div></div>
-    <div class="frame d" data-l="Desktop · coluna esquerda"><div class="atmo"><i></i></div><div class="stack"><div class="gcards">
+    <div class="frame d wide" data-l="Desktop · coluna esquerda (largura real, ~700px)"><div class="atmo"><i></i></div><div class="stack"><div class="gcards">
   <div class="gcard"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5.2c0 4.4-2.9 8.3-7 9.8-4.1-1.5-7-5.4-7-9.8V6l7-3z"/><path d="M9 12.2l2 2 4-4.2"/></svg></i><span>O dinheiro fica na sua corretora, no seu nome.</span></div>
   <div class="gcard"><i><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9.5" rx="2.2"/><path d="M8.5 11V7.6a3.5 3.5 0 0 1 6.6-1.6"/><circle cx="12" cy="15.7" r="1.1"/></svg></i><span>Sem fidelidade nem período mínimo.</span></div>
 </div>
@@ -212,7 +215,7 @@ h1{font:800 26px/1.15 var(--f-head);letter-spacing:-.03em;margin-bottom:6px}
   <div class="ln-x"><span style="left:0">jan</span><span style="left:32.97%">abr</span><span style="left:100%">out</span></div>
 </figure></div></div>
   </div>
-  <p class="notes"><b>Prós:</b> as garantias ganham peso visual próprio, logo abaixo do botão, e combinam com os cards de credenciais mais abaixo. <b>Contra:</b> um elemento a mais na primeira dobra (~70px no celular); são 4 superfícies de vidro empilhadas (form, 2 cards, gráfico).</p>
+  <p class="notes"><b>Ajuste [K 05/10]:</b> cards reduzidos para caber ícone e texto em uma linha (ícone 22px, texto 12,5px no celular e 13px no desktop, padding 8×12). Custo no celular: ~62px abaixo do botão.</p>
 </section>
 <section class="model" id="modelo-c3">
   <h2><em>C3</em>Dentro do formulário, abaixo do botão</h2>
@@ -235,7 +238,7 @@ h1{font:800 26px/1.15 var(--f-head);letter-spacing:-.03em;margin-bottom:6px}
   </div>
   <div class="ln-x"><span style="left:0">jan</span><span style="left:32.97%">abr</span><span style="left:100%">out</span></div>
 </figure></div></div>
-    <div class="frame d" data-l="Desktop · hero inteiro (sem a headline)"><div class="atmo"><i></i></div><div class="stack"><div class="two"><div class="chartcol"><figure class="pcard ln" aria-label="Crescimento do capital: de janeiro a outubro de 2026, a Rede Neural Vault acumulou +56,1% e o Bitcoin caiu 4,4%">
+    <div class="frame d " data-l="Desktop · hero inteiro (sem a headline)"><div class="atmo"><i></i></div><div class="stack"><div class="two"><div class="chartcol"><figure class="pcard ln" aria-label="Crescimento do capital: de janeiro a outubro de 2026, a Rede Neural Vault acumulou +56,1% e o Bitcoin caiu 4,4%">
   <div class="ln-plot">
     <div class="ln-sim" style="width:32.97%"><span>Simulação</span></div>
     <div class="ln-real" style="left:32.97%"><span>Capital real</span></div>
