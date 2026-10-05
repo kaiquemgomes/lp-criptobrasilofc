@@ -103,15 +103,15 @@ h1{font:800 26px/1.15 var(--f-head);letter-spacing:-.03em;margin-bottom:6px}
 .frame.d .ln-foot{flex-direction:row;flex-wrap:wrap;gap:6px 26px;margin-top:14px;padding-top:13px}
 .frame.d .ln-foot span{font-size:13.5px}
 /* [K 05/10] C2 compacto: cada card em uma linha (ícone + frase); empilhados no celular, lado a lado no desktop */
-.gcards{display:flex;flex-direction:column;gap:6px}
-.gcard{display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.018));border:1px solid rgba(255,255,255,.09);box-shadow:inset 0 1px 0 rgba(255,255,255,.06)}
+.gcards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+.gcard{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.018));border:1px solid rgba(255,255,255,.09);box-shadow:inset 0 1px 0 rgba(255,255,255,.06)}
 .gcard i{display:flex;flex-shrink:0;width:22px;height:22px;align-items:center;justify-content:center;border-radius:7px;background:rgba(239,204,45,.12);color:var(--yellow)}
 .gcard svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
-.gcard span{font-size:12.5px;line-height:1.3;color:var(--t1);white-space:nowrap;letter-spacing:-.005em}
-.frame.d .gcards{flex-direction:row;gap:8px}.frame.d .gcard{padding:9px 14px}
-.frame.d .gcard span{font-size:13px}
+.gcard span{font-size:11px;line-height:1.3;color:var(--t1);letter-spacing:-.01em}
+.frame.d .gcards{display:flex;gap:8px}.frame.d .gcard{padding:9px 14px}
+.frame.d .gcard span{font-size:13px;white-space:nowrap}
 .frame.d.wide{width:740px}
-@media (max-width:380px){.gcard span{font-size:11px}}  /* 360px: a 1ª frase ainda cabe em uma linha */
+
 .formph.on{opacity:1}.formph.on>span,.formph.on>i,.formph.on>em{opacity:.4}
 .f-assure{display:flex;flex-direction:column;gap:5px;margin-top:4px;padding-top:10px;border-top:1px solid var(--line)}
 .f-assure span{display:flex;gap:8px;font-size:12.5px;line-height:1.4;color:var(--t1)}
@@ -170,7 +170,7 @@ h1{font:800 26px/1.15 var(--f-head);letter-spacing:-.03em;margin-bottom:6px}
 </section>
 <section class="model" id="modelo-c2">
   <h2><em>C2</em>Dois mini-cards com ícone (escolhido, compacto)</h2>
-  <p class="why">Entre o formulário e o gráfico, dois cards de uma linha só: ícone dourado (escudo e cadeado aberto) e a frase. No celular ficam empilhados; no desktop, lado a lado na largura real da coluna esquerda (~700px a 1440).</p>
+  <p class="why">Entre o formulário e o gráfico, dois cards de uma linha só: ícone dourado (escudo e cadeado aberto) e a frase. Lado a lado no celular e no desktop; ícone e frase na mesma linha dentro do card.</p>
   <div class="frames ">
     <div class="frame m" data-l="Celular · 390px"><div class="atmo"><i></i></div><div class="stack"><div class="formph"><span>São 2 passos.</span><i></i><i></i><em>Continuar</em></div><div class="gcards">
   <div class="gcard"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5.2c0 4.4-2.9 8.3-7 9.8-4.1-1.5-7-5.4-7-9.8V6l7-3z"/><path d="M9 12.2l2 2 4-4.2"/></svg></i><span>O dinheiro fica na sua corretora, no seu nome.</span></div>
@@ -215,7 +215,7 @@ h1{font:800 26px/1.15 var(--f-head);letter-spacing:-.03em;margin-bottom:6px}
   <div class="ln-x"><span style="left:0">jan</span><span style="left:32.97%">abr</span><span style="left:100%">out</span></div>
 </figure></div></div>
   </div>
-  <p class="notes"><b>Ajuste [K 05/10]:</b> cards reduzidos para caber ícone e texto em uma linha (ícone 22px, texto 12,5px no celular e 13px no desktop, padding 8×12). Custo no celular: ~62px abaixo do botão.</p>
+  <p class="notes"><b>Ajuste [K 05/10]:</b> dois cards lado a lado, ícone à esquerda e frase ao lado (11px no celular, em 2 linhas; 13px no desktop, em 1 linha). Custo no celular: ~44px abaixo do botão.</p>
 </section>
 <section class="model" id="modelo-c3">
   <h2><em>C3</em>Dentro do formulário, abaixo do botão</h2>
