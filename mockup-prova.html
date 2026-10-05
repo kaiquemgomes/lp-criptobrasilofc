@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>Mockup · bloco de prova do hero · Rede Neural Vault</title>
+<link rel="stylesheet" href="assets/css/fonts.css"><style>:root{--yellow:#efcc2d;--yellow-2:#f7de6b;--ink:#07070a;--ink-2:#0c0c10;--white:#fff;--t1:#f2f2f2;--t2:#a7a7ad;--t3:#74747b;--t4:#55555c;--pos:#3ccf91;--neg:#ef6f6c;--line:rgba(255,255,255,.07);--line-2:rgba(255,255,255,.11);--f-head:'Manrope',sans-serif;--f-body:'Inter',sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--ink);color:var(--t1);font-family:var(--f-body);line-height:1.6;-webkit-font-smoothing:antialiased;padding:40px 24px 80px}
+h1{font:800 26px/1.15 var(--f-head);letter-spacing:-.03em;margin-bottom:6px}
+.sub{color:var(--t2);font-size:14px;max-width:720px;margin-bottom:40px}
+.model{margin:0 0 72px;padding-top:28px;border-top:1px solid var(--line)}
+.model h2{font:700 20px/1.2 var(--f-head);letter-spacing:-.02em;margin-bottom:4px}
+.model h2 em{font-style:normal;color:var(--yellow);margin-right:10px}
+.model .why{color:var(--t2);font-size:13.5px;max-width:720px;margin-bottom:30px}
+.model .why b{color:var(--t1);font-weight:600}
+.frames{display:flex;gap:36px;align-items:flex-start;flex-wrap:wrap}
+.frame{border:1px solid var(--line-2);border-radius:28px;background:var(--ink-2);padding:16px;position:relative}
+.frame::before{content:attr(data-l);position:absolute;top:-22px;left:14px;font:600 10px/1 var(--f-body);letter-spacing:.18em;text-transform:uppercase;color:var(--t4)}
+.frame.m{width:390px}.frame.d{width:640px}
+.frame.d .assure{flex-direction:row;flex-wrap:wrap;gap:8px 28px}.frame.d .assure span{font-size:14px}
+.atmo{position:absolute;inset:0;border-radius:inherit;overflow:hidden;pointer-events:none;z-index:0}
+.atmo i{position:absolute;width:520px;height:420px;left:-180px;top:-200px;border-radius:50%;filter:blur(80px);background:radial-gradient(circle,rgba(239,204,45,.16),transparent 65%)}
+.stack{position:relative;z-index:1;display:flex;flex-direction:column;gap:10px}
+.formph{border-radius:18px;border:1px solid var(--line-2);background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));padding:14px 16px 12px;opacity:.4;display:flex;flex-direction:column;gap:8px}
+.formph span{font:700 13px var(--f-head)}.formph i{height:38px;border-radius:10px;border:1px solid var(--line-2)}
+.formph em{font:700 14px var(--f-head);font-style:normal;background:var(--yellow);color:#111;border-radius:10px;height:44px;display:flex;align-items:center;justify-content:center}
+.assure{display:flex;flex-direction:column;gap:6px;margin:4px 0 0;padding:0}
+.assure span{display:flex;gap:8px;font-size:13.5px;line-height:1.4;color:var(--t1)}
+.assure b{color:var(--yellow);font-size:9px;line-height:1.9}
+.pcard{position:relative;margin:0;padding:14px 16px 12px;border-radius:18px;background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.012));border:1px solid rgba(255,255,255,.09);box-shadow:inset 0 1px 0 rgba(255,255,255,.06);backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%)}
+.frame.d .pcard{padding:18px 20px 14px;border-radius:22px}
+.pc-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font:600 10px/1 var(--f-body);letter-spacing:.16em;text-transform:uppercase;color:var(--t3);margin-bottom:14px}
+.pc-head .pc-r{letter-spacing:.04em;text-transform:none;font:500 11.5px var(--f-body);color:var(--t2)}.pc-head .pc-r b{color:#f07a74;font-weight:700}
+.frame.d .pc-head{font-size:11px;margin-bottom:18px}.frame.d .pc-head .pc-r{font-size:12.5px}
+/* ---- A: duelo ---- */
+.du-row{display:grid;grid-template-columns:minmax(0,1fr);gap:5px;margin-bottom:12px}
+.frame.m .du-lab{text-align:left;padding-left:8%}
+.frame.d .du-row{grid-template-columns:150px minmax(0,1fr);align-items:center;gap:10px;margin-bottom:16px}
+.du-lab{font:600 12.5px/1.2 var(--f-head);color:var(--t2);text-align:right}.frame.d .du-lab{font-size:14.5px}
+.du-plot{position:relative;height:28px}.frame.d .du-plot{height:34px}
+.du-zero{position:absolute;left:8%;top:-6px;bottom:-6px;width:1px;background:rgba(255,255,255,.22)}
+.du-bar{position:absolute;top:0;bottom:0;display:flex;overflow:hidden;border-radius:0 7px 7px 0}
+.du-bar.rn{left:8%}
+.du-bar.btc{right:92%;background:linear-gradient(90deg,rgba(240,122,116,.55),#f07a74);border-radius:7px 0 0 7px}
+.du-sim{background:repeating-linear-gradient(135deg,rgba(239,204,45,.55) 0 3px,rgba(239,204,45,.18) 3px 7px);border-right:1px dashed rgba(0,0,0,.45)}
+.du-real{flex:1;background:linear-gradient(90deg,#d9b44a,#efcc2d)}
+.du-val{position:absolute;top:50%;transform:translateY(-50%);margin-left:10px;font:800 16px/1 var(--f-head);letter-spacing:-.02em;white-space:nowrap}
+.frame.d .du-val{font-size:20px}
+.du-val.rn{color:var(--yellow)}.du-val.btc{color:#f07a74}
+.du-leg{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:4px;padding-top:12px;border-top:1px solid var(--line);font-size:11.5px;color:var(--t3)}
+.du-leg b{color:var(--t1);font-weight:600}.frame.d .du-leg{font-size:12.5px}
+.sw{display:inline-block;width:14px;height:8px;border-radius:2px;margin-right:7px;vertical-align:-1px}
+.sw.sim{background:repeating-linear-gradient(135deg,rgba(239,204,45,.55) 0 2px,rgba(239,204,45,.18) 2px 5px)}.sw.real{background:#efcc2d}
+/* ---- B: mês a mês ---- */
+.mb-plot{position:relative;display:flex;align-items:stretch;gap:5px;height:132px;padding:18px 0 0}
+.frame.d .mb-plot{height:180px;gap:10px}
+.mb-simband{position:absolute;left:-6px;top:0;bottom:0;width:calc(30% + 4px);background:rgba(255,255,255,.025);border-right:1px dashed rgba(255,255,255,.12);border-radius:6px 0 0 6px}
+.mb-simband span{position:absolute;left:6px;top:4px;font:600 8px/1 var(--f-body);letter-spacing:.14em;text-transform:uppercase;color:var(--t4)}
+.frame.d .mb-simband span{font-size:9px}
+.mb-zero{position:absolute;left:0;right:0;height:1px;background:rgba(255,255,255,.22);z-index:0}
+.mb-col{flex:1;position:relative;min-width:0;top:18px;height:calc(100% - 18px)}
+.mb-col>span{position:absolute;left:0;right:0;bottom:-18px;text-align:center;font-size:9.5px;color:var(--t4)}
+.frame.d .mb-col>span{font-size:11px;bottom:-20px}
+.mb-bar{position:absolute;left:12%;right:12%;border-radius:4px 4px 0 0}
+.mb-bar.pos{background:linear-gradient(180deg,#efcc2d,#c99a12)}
+.mb-bar.sim{background:repeating-linear-gradient(135deg,rgba(239,204,45,.5) 0 3px,rgba(239,204,45,.16) 3px 7px)}
+.mb-bar.neg{background:linear-gradient(180deg,rgba(240,122,116,.55),#f07a74);border-radius:0 0 4px 4px}
+.mb-bar b{position:absolute;left:50%;transform:translateX(-50%);font:700 9px/1 var(--f-head);white-space:nowrap;color:var(--t2)}
+.frame.d .mb-bar b{font-size:11px}
+.mb-bar.pos b,.mb-bar.sim b{top:-13px}.mb-bar.neg b{top:-13px;color:#f07a74}
+.frame.d .mb-bar.pos b,.frame.d .mb-bar.sim b{top:-15px}.frame.d .mb-bar.neg b{top:-15px}
+.mb-foot{margin-top:28px;padding-top:12px;border-top:1px solid var(--line);font-size:12px;color:var(--t3);line-height:1.45}
+.mb-foot b{color:var(--t1);font-weight:600}.mb-foot b.y{color:var(--yellow)}.frame.d .mb-foot{font-size:13.5px;margin-top:32px}
+/* ---- C: linha limpa ---- */
+.ln-plot{position:relative;height:132px;margin:6px 96px 0 0}
+.frame.d .ln-plot{height:210px;margin-right:130px}
+.ln-plot svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.ln-sim{position:absolute;left:0;top:0;bottom:0;background:rgba(255,255,255,.028);border-right:1px dashed rgba(255,255,255,.14)}
+.ln-sim span,.ln-real span{position:absolute;left:6px;top:4px;font:600 8px/1 var(--f-body);letter-spacing:.14em;text-transform:uppercase;color:var(--t4)}
+.ln-real{position:absolute;top:0;bottom:0;right:0}.ln-real span{color:var(--t3)}
+.frame.d .ln-sim span,.frame.d .ln-real span{font-size:9.5px;left:8px;top:6px}
+.ln-zero{stroke:rgba(255,255,255,.22);stroke-width:1;vector-effect:non-scaling-stroke}
+.ln-area{fill:url(#lnFill);stroke:none}
+.ln-rn{fill:none;stroke:#efcc2d;stroke-width:2.6;stroke-linejoin:round;stroke-linecap:round;vector-effect:non-scaling-stroke}
+.frame.d .ln-rn{stroke-width:3}
+.ln-btc{fill:none;stroke:#f07a74;stroke-opacity:.75;stroke-width:1.4;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.ln-tip{position:absolute;left:100%;transform:translateY(-50%);padding-left:12px;display:flex;flex-direction:column;line-height:1;white-space:nowrap}
+.ln-tip::before{content:"";position:absolute;left:-4px;top:50%;width:8px;height:8px;margin-top:-4px;border-radius:50%}
+.ln-tip.rn::before{background:#efcc2d;box-shadow:0 0 0 4px rgba(239,204,45,.18)}.ln-tip.btc::before{background:#f07a74;box-shadow:0 0 0 4px rgba(240,122,116,.15)}
+.ln-tip small{font:600 9.5px var(--f-body);letter-spacing:.06em;text-transform:uppercase;color:var(--t3);margin-bottom:4px}
+.ln-tip b{font:800 15px var(--f-head);letter-spacing:-.02em}.ln-tip.rn b{color:var(--yellow)}.ln-tip.btc b{color:#f07a74}
+.frame.d .ln-tip small{font-size:10.5px}.frame.d .ln-tip b{font-size:19px}
+.ln-y0{position:absolute;right:100%;margin-right:6px;transform:translateY(-50%);font-size:9px;color:var(--t4)}
+.ln-x{position:relative;height:16px;margin:6px 96px 0 0}.frame.d .ln-x{margin-right:130px;height:18px}
+.ln-x span{position:absolute;top:3px;font-size:9.5px;color:var(--t4);transform:translateX(-50%)}
+.ln-x span:first-child{transform:none}.ln-x span:last-child{transform:translateX(-100%)}
+.frame.d .ln-x span{font-size:11px}
+.notes{margin-top:14px;font-size:12.5px;color:var(--t3);max-width:720px;line-height:1.55}
+.notes b{color:var(--t2);font-weight:600}
+@media (max-width:720px){body{padding:28px 14px 60px}.frame.m,.frame.d{width:100%;max-width:420px}.frame.d{display:none}}
+</style></head>
+<body>
+<h1>Bloco de prova do hero: 3 modelos</h1>
+<p class="sub">Substitui só o trecho “garantias + gráfico” abaixo do formulário. Headline e formulário ficam como estão (o formulário aparece apagado só para dar contexto). Dados: RN +56,1% (simulação jan–mar +29,7% · capital real abr–out +20,3%), Bitcoin −4,4%, meses conferidos em 02/10.</p>
+
+<section class="model" id="modelo-a">
+  <h2><em>A</em>Duelo em barras</h2>
+  <p class="why">Troca a curva por duas barras no mesmo eixo. O leitor vê a distância entre +56,1% e −4,4% em um segundo, e a parte simulada fica <b>dentro</b> da barra, hachurada, com os dois números abertos. É o mais honesto dos três e o mais legível em 390px.</p>
+  <div class="frames">
+    <div class="frame m" data-l="Celular · 390px"><div class="atmo"><i></i></div><div class="stack"><div class="formph"><span>São 2 passos.</span><i></i><i></i><em>Continuar</em></div>
+<p class="assure"><span><b>◆</b>O dinheiro fica na sua corretora, no seu nome.</span><span><b>◆</b>Sem fidelidade nem período mínimo.</span></p>
+<figure class="pcard duel" aria-label="Rede Neural Vault +56,1% contra Bitcoin −4,4%, de janeiro a outubro de 2026, em dólar">
+  <div class="pc-head"><span>Jan–out/2026 · em dólar</span></div>
+  <div class="du-row">
+    <div class="du-lab">Rede Neural Vault</div>
+    <div class="du-plot"><i class="du-zero"></i>
+      <div class="du-bar rn" style="width:65.4%"><i class="du-sim" style="width:53.0%"></i><i class="du-real"></i></div>
+      <b class="du-val rn" style="left:73.4%">+56,1%</b>
+    </div>
+  </div>
+  <div class="du-row">
+    <div class="du-lab">Bitcoin</div>
+    <div class="du-plot"><i class="du-zero"></i>
+      <div class="du-bar btc" style="width:5.1%"></div>
+      <b class="du-val btc" style="left:9%">−4,4%</b>
+    </div>
+  </div>
+  <figcaption class="du-leg"><span><i class="sw sim"></i>Simulação jan–mar <b>+29,7%</b></span><span><i class="sw real"></i>Capital real abr–out <b>+20,3%</b></span></figcaption>
+</figure></div></div>
+    <div class="frame d" data-l="Desktop · coluna esquerda"><div class="atmo"><i></i></div><div class="stack">
+<p class="assure"><span><b>◆</b>O dinheiro fica na sua corretora, no seu nome.</span><span><b>◆</b>Sem fidelidade nem período mínimo.</span></p>
+<figure class="pcard duel" aria-label="Rede Neural Vault +56,1% contra Bitcoin −4,4%, de janeiro a outubro de 2026, em dólar">
+  <div class="pc-head"><span>Jan–out/2026 · em dólar</span></div>
+  <div class="du-row">
+    <div class="du-lab">Rede Neural Vault</div>
+    <div class="du-plot"><i class="du-zero"></i>
+      <div class="du-bar rn" style="width:65.4%"><i class="du-sim" style="width:53.0%"></i><i class="du-real"></i></div>
+      <b class="du-val rn" style="left:73.4%">+56,1%</b>
+    </div>
+  </div>
+  <div class="du-row">
+    <div class="du-lab">Bitcoin</div>
+    <div class="du-plot"><i class="du-zero"></i>
+      <div class="du-bar btc" style="width:5.1%"></div>
+      <b class="du-val btc" style="left:9%">−4,4%</b>
+    </div>
+  </div>
+  <figcaption class="du-leg"><span><i class="sw sim"></i>Simulação jan–mar <b>+29,7%</b></span><span><i class="sw real"></i>Capital real abr–out <b>+20,3%</b></span></figcaption>
+</figure></div></div>
+  </div>
+  <p class="notes"><b>Prós:</b> leitura instantânea; simulação × real explícito (bom para o advogado); zero legenda. <b>Contra:</b> não mostra o caminho (as quedas no meio), então quem quer ver “como foi o ano” depende do gráfico mensal mais abaixo.</p>
+</section>
+<section class="model" id="modelo-b">
+  <h2><em>B</em>Mês a mês</h2>
+  <p class="why">Troca o acumulado pela consistência. O ICP avesso a risco não compra o +56%, compra “quantos meses deram certo”. Dez barras, positivos em dourado, negativos em vermelho, simulação hachurada, e uma frase de prova embaixo.</p>
+  <div class="frames">
+    <div class="frame m" data-l="Celular · 390px"><div class="atmo"><i></i></div><div class="stack"><div class="formph"><span>São 2 passos.</span><i></i><i></i><em>Continuar</em></div>
+<p class="assure"><span><b>◆</b>O dinheiro fica na sua corretora, no seu nome.</span><span><b>◆</b>Sem fidelidade nem período mínimo.</span></p>
+<figure class="pcard mb" aria-label="Rentabilidade mês a mês da Rede Neural Vault em 2026">
+  <div class="pc-head"><span>Mês a mês · 2026</span><span class="pc-r">Bitcoin no período <b>−4,4%</b></span></div>
+  <div class="mb-plot">
+    <div class="mb-simband"><span>Simulação</span></div>
+    <i class="mb-zero" style="top:89.53%"></i>
+    <div class="mb-col"><i class="mb-bar sim" style="top:89.53%;height:0.05%"><b>0,0</b></i><span>jan</span></div><div class="mb-col"><i class="mb-bar sim" style="bottom:10.47%;height:63.12%"><b>+11,5</b></i><span>fev</span></div><div class="mb-col"><i class="mb-bar sim" style="bottom:10.47%;height:89.53%"><b>+16,3</b></i><span>mar</span></div><div class="mb-col"><i class="mb-bar pos" style="bottom:10.47%;height:21.70%"><b>+4,0</b></i><span>abr</span></div><div class="mb-col"><i class="mb-bar pos" style="bottom:10.47%;height:13.81%"><b>+2,5</b></i><span>mai</span></div><div class="mb-col"><i class="mb-bar neg" style="top:89.53%;height:10.47%"><b>−1,9</b></i><span>jun</span></div><div class="mb-col"><i class="mb-bar pos" style="bottom:10.47%;height:13.32%"><b>+2,4</b></i><span>jul</span></div><div class="mb-col"><i class="mb-bar pos" style="bottom:10.47%;height:8.22%"><b>+1,5</b></i><span>ago</span></div><div class="mb-col"><i class="mb-bar pos" style="bottom:10.47%;height:46.96%"><b>+8,6</b></i><span>set</span></div><div class="mb-col"><i class="mb-bar pos" style="bottom:10.47%;height:10.58%"><b>+1,9</b></i><span>out</span></div>
+  </div>
+  <figcaption class="mb-foot"><b>6 de 7 meses positivos</b> com capital real (abr–out). Acumulado no ano: <b class="y">+56,1%</b>.</figcaption>
+</figure></div></div>
+    <div class="frame d" data-l="Desktop · coluna esquerda"><div class="atmo"><i></i></div><div class="stack">
+<p class="assure"><span><b>◆</b>O dinheiro fica na sua corretora, no seu nome.</span><span><b>◆</b>Sem fidelidade nem período mínimo.</span></p>
+<figure class="pcard mb" aria-label="Rentabilidade mês a mês da Rede Neural Vault em 2026">
+  <div class="pc-head"><span>Mês a mês · 2026</span><span class="pc-r">Bitcoin no período <b>−4,4%</b></span></div>
+  <div class="mb-plot">
+    <div class="mb-simband"><span>Simulação</span></div>
+    <i class="mb-zero" style="top:89.53%"></i>
+    <div class="mb-col"><i class="mb-bar sim" style="top:89.53%;height:0.05%"><b>0,0</b></i><span>jan</span></div><div class="mb-col"><i class="mb-bar sim" style="bottom:10.47%;height:63.12%"><b>+11,5</b></i><span>fev</span></div><div class="mb-col"><i class="mb-bar sim" style="bottom:10.47%;height:89.53%"><b>+16,3</b></i><span>mar</span></div><div class="mb-col"><i class="mb-bar pos" style="bottom:10.47%;height:21.70%"><b>+4,0</b></i><span>abr</span></div><div class="mb-col"><i class="mb-bar pos" style="bottom:10.47%;height:13.81%"><b>+2,5</b></i><span>mai</span></div><div class="mb-col"><i class="mb-bar neg" style="top:89.53%;height:10.47%"><b>−1,9</b></i><span>jun</span></div><div class="mb-col"><i class="mb-bar pos" style="bottom:10.47%;height:13.32%"><b>+2,4</b></i><span>jul</span></div><div class="mb-col"><i class="mb-bar pos" style="bottom:10.47%;height:8.22%"><b>+1,5</b></i><span>ago</span></div><div class="mb-col"><i class="mb-bar pos" style="bottom:10.47%;height:46.96%"><b>+8,6</b></i><span>set</span></div><div class="mb-col"><i class="mb-bar pos" style="bottom:10.47%;height:10.58%"><b>+1,9</b></i><span>out</span></div>
+  </div>
+  <figcaption class="mb-foot"><b>6 de 7 meses positivos</b> com capital real (abr–out). Acumulado no ano: <b class="y">+56,1%</b>.</figcaption>
+</figure></div></div>
+  </div>
+  <p class="notes"><b>Prós:</b> prova de consistência (6 de 7 meses reais positivos) que o acumulado esconde; cada mês com seu número. <b>Contra:</b> repete o gráfico mensal de Resultados, então esse sai (ou vira o comparativo com BTC). O Bitcoin fica só como texto no canto.</p>
+</section>
+<section class="model" id="modelo-c">
+  <h2><em>C</em>Linha limpa</h2>
+  <p class="why">Mantém a ideia atual, mas tira o que confunde: a legenda de 3 itens, a troca dourado/azul (que parece outro ativo) e o eixo Y inteiro. Fica a linha da RN em dourado, o Bitcoin fino em vermelho, e os dois valores na ponta com o nome do lado. Mais alto no celular (132px contra 104px).</p>
+  <div class="frames">
+    <div class="frame m" data-l="Celular · 390px"><div class="atmo"><i></i></div><div class="stack"><div class="formph"><span>São 2 passos.</span><i></i><i></i><em>Continuar</em></div>
+<p class="assure"><span><b>◆</b>O dinheiro fica na sua corretora, no seu nome.</span><span><b>◆</b>Sem fidelidade nem período mínimo.</span></p>
+<figure class="pcard ln" aria-label="Crescimento do capital: de janeiro a outubro de 2026, a Rede Neural Vault acumulou +56,1% e o Bitcoin caiu 4,4%">
+  <div class="ln-plot">
+    <div class="ln-sim" style="width:32.97%"><span>Simulação</span></div>
+    <div class="ln-real" style="left:32.97%"><span>Capital real</span></div>
+    <svg viewBox="0 0 1000 300" preserveAspectRatio="none" aria-hidden="true">
+      <defs><linearGradient id="lnFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#efcc2d" stop-opacity=".28"/><stop offset="1" stop-color="#efcc2d" stop-opacity=".02"/></linearGradient></defs>
+      <line class="ln-zero" x1="0" x2="1000" y1="184.6" y2="184.6"/>
+      <path class="ln-area" d="M0,184.6 L0.0,184.6 L3.7,184.6 L7.3,184.6 L11.0,184.6 L14.7,184.6 L18.3,184.6 L22.0,184.6 L25.6,184.6 L29.3,184.6 L33.0,184.6 L36.6,184.6 L40.3,184.6 L44.0,184.6 L47.6,184.6 L51.3,184.6 L54.9,184.6 L58.6,184.6 L62.3,184.6 L65.9,184.6 L69.6,184.6 L73.3,181.2 L76.9,180.8 L80.6,180.7 L84.2,181.9 L87.9,190.2 L91.6,184.6 L95.2,184.6 L98.9,184.6 L102.6,184.6 L106.2,184.6 L109.9,184.6 L113.6,184.6 L117.2,184.6 L120.9,184.6 L124.5,184.6 L128.2,184.6 L131.9,149.5 L135.5,155.4 L139.2,150.6 L142.9,151.4 L146.5,151.4 L150.2,151.4 L153.8,151.4 L157.5,151.4 L161.2,151.4 L164.8,151.4 L168.5,151.4 L172.2,151.4 L175.8,156.4 L179.5,153.8 L183.2,148.9 L186.8,149.1 L190.5,150.7 L194.1,164.9 L197.8,167.7 L201.5,149.0 L205.1,151.3 L208.8,159.0 L212.5,153.7 L216.1,159.4 L219.8,144.9 L223.4,144.9 L227.1,124.0 L230.8,124.0 L234.4,124.0 L238.1,128.5 L241.8,135.2 L245.4,122.7 L249.1,115.1 L252.7,115.1 L256.4,115.1 L260.1,115.1 L263.7,115.1 L267.4,115.1 L271.1,115.1 L274.7,115.1 L278.4,115.1 L282.1,115.1 L285.7,115.1 L289.4,115.1 L293.0,115.1 L296.7,98.9 L300.4,98.9 L304.0,98.9 L307.7,98.9 L311.4,98.9 L315.0,99.0 L318.7,101.1 L322.3,96.7 L326.0,88.3 L329.7,89.2 L333.3,96.1 L337.0,95.7 L340.7,93.8 L344.3,84.0 L348.0,84.0 L351.6,84.0 L355.3,84.0 L359.0,84.0 L362.6,84.0 L366.3,84.0 L370.0,84.0 L373.6,84.0 L377.3,84.0 L381.0,84.0 L384.6,84.0 L388.3,84.0 L391.9,84.0 L395.6,84.0 L399.3,84.0 L402.9,84.0 L406.6,84.0 L410.3,84.0 L413.9,84.0 L417.6,84.0 L421.2,84.0 L424.9,84.0 L428.6,84.0 L432.2,87.0 L435.9,84.2 L439.6,74.7 L443.2,74.7 L446.9,74.7 L450.5,74.7 L454.2,74.7 L457.9,74.7 L461.5,74.7 L465.2,74.7 L468.9,74.7 L472.5,74.7 L476.2,74.7 L479.9,74.7 L483.5,74.7 L487.2,74.7 L490.8,74.7 L494.5,74.7 L498.2,74.7 L501.8,77.1 L505.5,78.1 L509.2,74.5 L512.8,74.2 L516.5,74.2 L520.1,67.8 L523.8,66.2 L527.5,64.9 L531.1,72.2 L534.8,80.1 L538.5,84.5 L542.1,85.3 L545.8,83.1 L549.5,84.2 L553.1,96.2 L556.8,96.2 L560.4,96.2 L564.1,96.2 L567.8,96.2 L571.4,97.1 L575.1,81.8 L578.8,81.8 L582.4,81.8 L586.1,81.8 L589.7,81.8 L593.4,81.8 L597.1,81.8 L600.7,81.8 L604.4,81.8 L608.1,81.8 L611.7,81.8 L615.4,81.8 L619.0,81.8 L622.7,81.8 L626.4,81.8 L630.0,81.8 L633.7,81.8 L637.4,81.8 L641.0,81.8 L644.7,81.8 L648.4,81.8 L652.0,81.8 L655.7,81.8 L659.3,81.8 L663.0,72.3 L666.7,72.3 L670.3,72.3 L674.0,72.3 L677.7,72.3 L681.3,72.3 L685.0,72.3 L688.6,72.3 L692.3,72.3 L696.0,72.3 L699.6,72.3 L703.3,72.3 L707.0,72.3 L710.6,72.3 L714.3,72.3 L717.9,72.3 L721.6,72.3 L725.3,72.3 L728.9,72.3 L732.6,72.3 L736.3,72.3 L739.9,72.3 L743.6,72.3 L747.3,72.3 L750.9,72.3 L754.6,72.3 L758.2,72.3 L761.9,72.3 L765.6,72.3 L769.2,72.3 L772.9,72.3 L776.6,72.3 L780.2,72.3 L783.9,72.3 L787.5,72.3 L791.2,72.3 L794.9,72.3 L798.5,72.3 L802.2,72.3 L805.9,72.3 L809.5,72.3 L813.2,72.3 L816.8,73.1 L820.5,73.0 L824.2,75.8 L827.8,75.5 L831.5,76.6 L835.2,66.3 L838.8,66.3 L842.5,66.3 L846.2,66.3 L849.8,66.3 L853.5,66.3 L857.1,66.3 L860.8,66.3 L864.5,66.3 L868.1,66.3 L871.8,66.3 L875.5,66.3 L879.1,66.3 L882.8,66.3 L886.4,66.3 L890.1,66.3 L893.8,66.8 L897.4,46.1 L901.1,46.1 L904.8,46.1 L908.4,46.1 L912.1,46.1 L915.8,46.1 L919.4,46.1 L923.1,55.5 L926.7,51.8 L930.4,51.5 L934.1,53.8 L937.7,46.4 L941.4,60.2 L945.1,57.1 L948.7,55.9 L952.4,31.5 L956.0,31.5 L959.7,31.5 L963.4,31.5 L967.0,31.5 L970.7,31.5 L974.4,31.5 L978.0,31.5 L981.7,31.5 L985.3,31.5 L989.0,31.5 L992.7,31.5 L996.3,30.6 L1000.0,22.9 L1000,184.6 Z"/>
+      <path class="ln-btc" d="M0.0,184.6 L3.7,180.9 L7.3,178.8 L11.0,175.9 L14.7,168.3 L18.3,168.7 L22.0,176.4 L25.6,177.3 L29.3,178.8 L33.0,179.2 L36.6,177.6 L40.3,176.6 L44.0,163.3 L47.6,158.3 L51.3,162.6 L54.9,162.8 L58.6,164.1 L62.3,168.9 L65.9,172.3 L69.6,186.0 L73.3,182.6 L76.9,182.3 L80.6,182.1 L84.2,183.4 L87.9,191.7 L91.6,186.2 L95.2,183.3 L98.9,183.1 L102.6,198.2 L106.2,199.5 L109.9,217.4 L113.6,223.2 L117.2,217.4 L120.9,227.1 L124.5,235.5 L128.2,268.8 L131.9,243.9 L135.5,248.1 L139.2,244.7 L142.9,245.3 L146.5,249.5 L150.2,255.3 L153.8,257.9 L157.5,249.5 L161.2,246.4 L164.8,249.6 L168.5,249.4 L172.2,253.9 L175.8,257.3 L179.5,255.5 L183.2,252.2 L186.8,252.4 L190.5,253.4 L194.1,263.1 L197.8,265.1 L201.5,252.3 L205.1,254.0 L208.8,259.2 L212.5,255.6 L216.1,259.5 L219.8,249.6 L223.4,251.2 L227.1,237.1 L230.8,242.9 L234.4,251.9 L238.1,254.7 L241.8,258.9 L245.4,250.9 L249.1,246.0 L252.7,245.2 L256.4,244.0 L260.1,242.8 L263.7,241.9 L267.4,236.6 L271.1,229.9 L274.7,233.1 L278.4,241.7 L282.1,246.0 L285.7,244.1 L289.4,249.3 L293.0,252.7 L296.7,242.8 L300.4,244.0 L304.0,241.4 L307.7,249.6 L311.4,257.5 L315.0,257.5 L318.7,258.7 L322.3,256.2 L326.0,251.4 L329.7,251.9 L333.3,255.8 L337.0,255.6 L340.7,254.6 L344.3,248.9 L348.0,249.5 L351.6,239.5 L355.3,242.3 L359.0,240.0 L362.6,236.2 L366.3,235.9 L370.0,243.4 L373.6,231.4 L377.3,232.4 L381.0,230.2 L384.6,229.0 L388.3,222.8 L391.9,227.3 L395.6,233.4 L399.3,226.8 L402.9,225.2 L406.6,219.2 L410.3,219.0 L413.9,221.6 L417.6,221.0 L421.2,217.7 L424.9,221.9 L428.6,225.2 L432.2,227.0 L435.9,225.2 L439.6,219.1 L443.2,217.6 L446.9,218.0 L450.5,213.8 L454.2,210.4 L457.9,208.6 L461.5,213.3 L465.2,212.7 L468.9,211.1 L472.5,206.1 L476.2,207.6 L479.9,211.7 L483.5,215.5 L487.2,209.8 L490.8,216.2 L494.5,219.3 L498.2,221.6 L501.8,223.1 L505.5,223.6 L509.2,221.3 L512.8,221.1 L516.5,227.8 L520.1,223.9 L523.8,222.8 L527.5,222.0 L531.1,226.5 L534.8,231.3 L538.5,234.0 L542.1,234.5 L545.8,233.2 L549.5,233.9 L553.1,241.2 L556.8,256.3 L560.4,264.8 L564.1,265.6 L567.8,274.8 L571.4,275.4 L575.1,267.4 L578.8,268.2 L582.4,272.6 L586.1,273.3 L589.7,266.5 L593.4,266.6 L597.1,263.8 L600.7,259.6 L604.4,257.7 L608.1,259.8 L611.7,263.6 L615.4,268.7 L619.0,266.7 L622.7,264.3 L626.4,267.5 L630.0,265.2 L633.7,269.4 L637.4,274.8 L641.0,278.9 L644.7,277.9 L648.4,278.2 L652.0,279.6 L655.7,277.4 L659.3,282.7 L663.0,278.2 L666.7,273.2 L670.3,269.9 L674.0,268.0 L677.7,266.4 L681.3,265.1 L685.0,267.3 L688.6,270.8 L692.3,267.8 L696.0,264.7 L699.6,265.9 L703.3,266.0 L707.0,270.7 L710.6,261.9 L714.3,262.8 L717.9,265.8 L721.6,265.5 L725.3,262.6 L728.9,262.9 L732.6,261.2 L736.3,257.0 L739.9,258.4 L743.6,261.7 L747.3,264.8 L750.9,264.1 L754.6,260.7 L758.2,266.1 L761.9,265.5 L765.6,265.3 L769.2,262.7 L772.9,268.9 L776.6,269.1 L780.2,266.7 L783.9,266.8 L787.5,264.9 L791.2,263.1 L794.9,264.2 L798.5,262.3 L802.2,262.1 L805.9,262.3 L809.5,265.4 L813.2,266.6 L816.8,267.0 L820.5,266.9 L824.2,268.4 L827.8,268.2 L831.5,268.8 L835.2,263.5 L838.8,262.9 L842.5,247.9 L846.2,236.0 L849.8,218.7 L853.5,222.8 L857.1,220.7 L860.8,216.6 L864.5,218.1 L868.1,216.5 L871.8,212.5 L875.5,220.3 L879.1,219.1 L882.8,220.8 L886.4,217.9 L890.1,221.6 L893.8,222.0 L897.4,209.2 L901.1,214.4 L904.8,213.9 L908.4,212.2 L912.1,216.2 L915.8,218.3 L919.4,218.8 L923.1,224.5 L926.7,222.3 L930.4,222.2 L934.1,223.6 L937.7,219.2 L941.4,227.5 L945.1,225.6 L948.7,224.9 L952.4,210.4 L956.0,209.3 L959.7,209.5 L963.4,191.8 L967.0,193.2 L970.7,199.0 L974.4,199.0 L978.0,200.0 L981.7,198.9 L985.3,198.8 L989.0,202.0 L992.7,201.4 L996.3,201.5 L1000.0,197.5"/>
+      <polyline class="ln-rn" points="0.0,184.6 3.7,184.6 7.3,184.6 11.0,184.6 14.7,184.6 18.3,184.6 22.0,184.6 25.6,184.6 29.3,184.6 33.0,184.6 36.6,184.6 40.3,184.6 44.0,184.6 47.6,184.6 51.3,184.6 54.9,184.6 58.6,184.6 62.3,184.6 65.9,184.6 69.6,184.6 73.3,181.2 76.9,180.8 80.6,180.7 84.2,181.9 87.9,190.2 91.6,184.6 95.2,184.6 98.9,184.6 102.6,184.6 106.2,184.6 109.9,184.6 113.6,184.6 117.2,184.6 120.9,184.6 124.5,184.6 128.2,184.6 131.9,149.5 135.5,155.4 139.2,150.6 142.9,151.4 146.5,151.4 150.2,151.4 153.8,151.4 157.5,151.4 161.2,151.4 164.8,151.4 168.5,151.4 172.2,151.4 175.8,156.4 179.5,153.8 183.2,148.9 186.8,149.1 190.5,150.7 194.1,164.9 197.8,167.7 201.5,149.0 205.1,151.3 208.8,159.0 212.5,153.7 216.1,159.4 219.8,144.9 223.4,144.9 227.1,124.0 230.8,124.0 234.4,124.0 238.1,128.5 241.8,135.2 245.4,122.7 249.1,115.1 252.7,115.1 256.4,115.1 260.1,115.1 263.7,115.1 267.4,115.1 271.1,115.1 274.7,115.1 278.4,115.1 282.1,115.1 285.7,115.1 289.4,115.1 293.0,115.1 296.7,98.9 300.4,98.9 304.0,98.9 307.7,98.9 311.4,98.9 315.0,99.0 318.7,101.1 322.3,96.7 326.0,88.3 329.7,89.2 333.3,96.1 337.0,95.7 340.7,93.8 344.3,84.0 348.0,84.0 351.6,84.0 355.3,84.0 359.0,84.0 362.6,84.0 366.3,84.0 370.0,84.0 373.6,84.0 377.3,84.0 381.0,84.0 384.6,84.0 388.3,84.0 391.9,84.0 395.6,84.0 399.3,84.0 402.9,84.0 406.6,84.0 410.3,84.0 413.9,84.0 417.6,84.0 421.2,84.0 424.9,84.0 428.6,84.0 432.2,87.0 435.9,84.2 439.6,74.7 443.2,74.7 446.9,74.7 450.5,74.7 454.2,74.7 457.9,74.7 461.5,74.7 465.2,74.7 468.9,74.7 472.5,74.7 476.2,74.7 479.9,74.7 483.5,74.7 487.2,74.7 490.8,74.7 494.5,74.7 498.2,74.7 501.8,77.1 505.5,78.1 509.2,74.5 512.8,74.2 516.5,74.2 520.1,67.8 523.8,66.2 527.5,64.9 531.1,72.2 534.8,80.1 538.5,84.5 542.1,85.3 545.8,83.1 549.5,84.2 553.1,96.2 556.8,96.2 560.4,96.2 564.1,96.2 567.8,96.2 571.4,97.1 575.1,81.8 578.8,81.8 582.4,81.8 586.1,81.8 589.7,81.8 593.4,81.8 597.1,81.8 600.7,81.8 604.4,81.8 608.1,81.8 611.7,81.8 615.4,81.8 619.0,81.8 622.7,81.8 626.4,81.8 630.0,81.8 633.7,81.8 637.4,81.8 641.0,81.8 644.7,81.8 648.4,81.8 652.0,81.8 655.7,81.8 659.3,81.8 663.0,72.3 666.7,72.3 670.3,72.3 674.0,72.3 677.7,72.3 681.3,72.3 685.0,72.3 688.6,72.3 692.3,72.3 696.0,72.3 699.6,72.3 703.3,72.3 707.0,72.3 710.6,72.3 714.3,72.3 717.9,72.3 721.6,72.3 725.3,72.3 728.9,72.3 732.6,72.3 736.3,72.3 739.9,72.3 743.6,72.3 747.3,72.3 750.9,72.3 754.6,72.3 758.2,72.3 761.9,72.3 765.6,72.3 769.2,72.3 772.9,72.3 776.6,72.3 780.2,72.3 783.9,72.3 787.5,72.3 791.2,72.3 794.9,72.3 798.5,72.3 802.2,72.3 805.9,72.3 809.5,72.3 813.2,72.3 816.8,73.1 820.5,73.0 824.2,75.8 827.8,75.5 831.5,76.6 835.2,66.3 838.8,66.3 842.5,66.3 846.2,66.3 849.8,66.3 853.5,66.3 857.1,66.3 860.8,66.3 864.5,66.3 868.1,66.3 871.8,66.3 875.5,66.3 879.1,66.3 882.8,66.3 886.4,66.3 890.1,66.3 893.8,66.8 897.4,46.1 901.1,46.1 904.8,46.1 908.4,46.1 912.1,46.1 915.8,46.1 919.4,46.1 923.1,55.5 926.7,51.8 930.4,51.5 934.1,53.8 937.7,46.4 941.4,60.2 945.1,57.1 948.7,55.9 952.4,31.5 956.0,31.5 959.7,31.5 963.4,31.5 967.0,31.5 970.7,31.5 974.4,31.5 978.0,31.5 981.7,31.5 985.3,31.5 989.0,31.5 992.7,31.5 996.3,30.6 1000.0,22.9"/>
+    </svg>
+    <i class="ln-tip rn" style="top:7.63%"><small>Rede Neural</small><b>+56,1%</b></i>
+    <i class="ln-tip btc" style="top:65.83%"><small>Bitcoin</small><b>−4,4%</b></i>
+    <span class="ln-y0" style="top:61.53%">0%</span>
+  </div>
+  <div class="ln-x"><span style="left:0">jan</span><span style="left:32.97%">abr</span><span style="left:100%">out</span></div>
+</figure></div></div>
+    <div class="frame d" data-l="Desktop · coluna esquerda"><div class="atmo"><i></i></div><div class="stack">
+<p class="assure"><span><b>◆</b>O dinheiro fica na sua corretora, no seu nome.</span><span><b>◆</b>Sem fidelidade nem período mínimo.</span></p>
+<figure class="pcard ln" aria-label="Crescimento do capital: de janeiro a outubro de 2026, a Rede Neural Vault acumulou +56,1% e o Bitcoin caiu 4,4%">
+  <div class="ln-plot">
+    <div class="ln-sim" style="width:32.97%"><span>Simulação</span></div>
+    <div class="ln-real" style="left:32.97%"><span>Capital real</span></div>
+    <svg viewBox="0 0 1000 300" preserveAspectRatio="none" aria-hidden="true">
+      <defs><linearGradient id="lnFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#efcc2d" stop-opacity=".28"/><stop offset="1" stop-color="#efcc2d" stop-opacity=".02"/></linearGradient></defs>
+      <line class="ln-zero" x1="0" x2="1000" y1="184.6" y2="184.6"/>
+      <path class="ln-area" d="M0,184.6 L0.0,184.6 L3.7,184.6 L7.3,184.6 L11.0,184.6 L14.7,184.6 L18.3,184.6 L22.0,184.6 L25.6,184.6 L29.3,184.6 L33.0,184.6 L36.6,184.6 L40.3,184.6 L44.0,184.6 L47.6,184.6 L51.3,184.6 L54.9,184.6 L58.6,184.6 L62.3,184.6 L65.9,184.6 L69.6,184.6 L73.3,181.2 L76.9,180.8 L80.6,180.7 L84.2,181.9 L87.9,190.2 L91.6,184.6 L95.2,184.6 L98.9,184.6 L102.6,184.6 L106.2,184.6 L109.9,184.6 L113.6,184.6 L117.2,184.6 L120.9,184.6 L124.5,184.6 L128.2,184.6 L131.9,149.5 L135.5,155.4 L139.2,150.6 L142.9,151.4 L146.5,151.4 L150.2,151.4 L153.8,151.4 L157.5,151.4 L161.2,151.4 L164.8,151.4 L168.5,151.4 L172.2,151.4 L175.8,156.4 L179.5,153.8 L183.2,148.9 L186.8,149.1 L190.5,150.7 L194.1,164.9 L197.8,167.7 L201.5,149.0 L205.1,151.3 L208.8,159.0 L212.5,153.7 L216.1,159.4 L219.8,144.9 L223.4,144.9 L227.1,124.0 L230.8,124.0 L234.4,124.0 L238.1,128.5 L241.8,135.2 L245.4,122.7 L249.1,115.1 L252.7,115.1 L256.4,115.1 L260.1,115.1 L263.7,115.1 L267.4,115.1 L271.1,115.1 L274.7,115.1 L278.4,115.1 L282.1,115.1 L285.7,115.1 L289.4,115.1 L293.0,115.1 L296.7,98.9 L300.4,98.9 L304.0,98.9 L307.7,98.9 L311.4,98.9 L315.0,99.0 L318.7,101.1 L322.3,96.7 L326.0,88.3 L329.7,89.2 L333.3,96.1 L337.0,95.7 L340.7,93.8 L344.3,84.0 L348.0,84.0 L351.6,84.0 L355.3,84.0 L359.0,84.0 L362.6,84.0 L366.3,84.0 L370.0,84.0 L373.6,84.0 L377.3,84.0 L381.0,84.0 L384.6,84.0 L388.3,84.0 L391.9,84.0 L395.6,84.0 L399.3,84.0 L402.9,84.0 L406.6,84.0 L410.3,84.0 L413.9,84.0 L417.6,84.0 L421.2,84.0 L424.9,84.0 L428.6,84.0 L432.2,87.0 L435.9,84.2 L439.6,74.7 L443.2,74.7 L446.9,74.7 L450.5,74.7 L454.2,74.7 L457.9,74.7 L461.5,74.7 L465.2,74.7 L468.9,74.7 L472.5,74.7 L476.2,74.7 L479.9,74.7 L483.5,74.7 L487.2,74.7 L490.8,74.7 L494.5,74.7 L498.2,74.7 L501.8,77.1 L505.5,78.1 L509.2,74.5 L512.8,74.2 L516.5,74.2 L520.1,67.8 L523.8,66.2 L527.5,64.9 L531.1,72.2 L534.8,80.1 L538.5,84.5 L542.1,85.3 L545.8,83.1 L549.5,84.2 L553.1,96.2 L556.8,96.2 L560.4,96.2 L564.1,96.2 L567.8,96.2 L571.4,97.1 L575.1,81.8 L578.8,81.8 L582.4,81.8 L586.1,81.8 L589.7,81.8 L593.4,81.8 L597.1,81.8 L600.7,81.8 L604.4,81.8 L608.1,81.8 L611.7,81.8 L615.4,81.8 L619.0,81.8 L622.7,81.8 L626.4,81.8 L630.0,81.8 L633.7,81.8 L637.4,81.8 L641.0,81.8 L644.7,81.8 L648.4,81.8 L652.0,81.8 L655.7,81.8 L659.3,81.8 L663.0,72.3 L666.7,72.3 L670.3,72.3 L674.0,72.3 L677.7,72.3 L681.3,72.3 L685.0,72.3 L688.6,72.3 L692.3,72.3 L696.0,72.3 L699.6,72.3 L703.3,72.3 L707.0,72.3 L710.6,72.3 L714.3,72.3 L717.9,72.3 L721.6,72.3 L725.3,72.3 L728.9,72.3 L732.6,72.3 L736.3,72.3 L739.9,72.3 L743.6,72.3 L747.3,72.3 L750.9,72.3 L754.6,72.3 L758.2,72.3 L761.9,72.3 L765.6,72.3 L769.2,72.3 L772.9,72.3 L776.6,72.3 L780.2,72.3 L783.9,72.3 L787.5,72.3 L791.2,72.3 L794.9,72.3 L798.5,72.3 L802.2,72.3 L805.9,72.3 L809.5,72.3 L813.2,72.3 L816.8,73.1 L820.5,73.0 L824.2,75.8 L827.8,75.5 L831.5,76.6 L835.2,66.3 L838.8,66.3 L842.5,66.3 L846.2,66.3 L849.8,66.3 L853.5,66.3 L857.1,66.3 L860.8,66.3 L864.5,66.3 L868.1,66.3 L871.8,66.3 L875.5,66.3 L879.1,66.3 L882.8,66.3 L886.4,66.3 L890.1,66.3 L893.8,66.8 L897.4,46.1 L901.1,46.1 L904.8,46.1 L908.4,46.1 L912.1,46.1 L915.8,46.1 L919.4,46.1 L923.1,55.5 L926.7,51.8 L930.4,51.5 L934.1,53.8 L937.7,46.4 L941.4,60.2 L945.1,57.1 L948.7,55.9 L952.4,31.5 L956.0,31.5 L959.7,31.5 L963.4,31.5 L967.0,31.5 L970.7,31.5 L974.4,31.5 L978.0,31.5 L981.7,31.5 L985.3,31.5 L989.0,31.5 L992.7,31.5 L996.3,30.6 L1000.0,22.9 L1000,184.6 Z"/>
+      <path class="ln-btc" d="M0.0,184.6 L3.7,180.9 L7.3,178.8 L11.0,175.9 L14.7,168.3 L18.3,168.7 L22.0,176.4 L25.6,177.3 L29.3,178.8 L33.0,179.2 L36.6,177.6 L40.3,176.6 L44.0,163.3 L47.6,158.3 L51.3,162.6 L54.9,162.8 L58.6,164.1 L62.3,168.9 L65.9,172.3 L69.6,186.0 L73.3,182.6 L76.9,182.3 L80.6,182.1 L84.2,183.4 L87.9,191.7 L91.6,186.2 L95.2,183.3 L98.9,183.1 L102.6,198.2 L106.2,199.5 L109.9,217.4 L113.6,223.2 L117.2,217.4 L120.9,227.1 L124.5,235.5 L128.2,268.8 L131.9,243.9 L135.5,248.1 L139.2,244.7 L142.9,245.3 L146.5,249.5 L150.2,255.3 L153.8,257.9 L157.5,249.5 L161.2,246.4 L164.8,249.6 L168.5,249.4 L172.2,253.9 L175.8,257.3 L179.5,255.5 L183.2,252.2 L186.8,252.4 L190.5,253.4 L194.1,263.1 L197.8,265.1 L201.5,252.3 L205.1,254.0 L208.8,259.2 L212.5,255.6 L216.1,259.5 L219.8,249.6 L223.4,251.2 L227.1,237.1 L230.8,242.9 L234.4,251.9 L238.1,254.7 L241.8,258.9 L245.4,250.9 L249.1,246.0 L252.7,245.2 L256.4,244.0 L260.1,242.8 L263.7,241.9 L267.4,236.6 L271.1,229.9 L274.7,233.1 L278.4,241.7 L282.1,246.0 L285.7,244.1 L289.4,249.3 L293.0,252.7 L296.7,242.8 L300.4,244.0 L304.0,241.4 L307.7,249.6 L311.4,257.5 L315.0,257.5 L318.7,258.7 L322.3,256.2 L326.0,251.4 L329.7,251.9 L333.3,255.8 L337.0,255.6 L340.7,254.6 L344.3,248.9 L348.0,249.5 L351.6,239.5 L355.3,242.3 L359.0,240.0 L362.6,236.2 L366.3,235.9 L370.0,243.4 L373.6,231.4 L377.3,232.4 L381.0,230.2 L384.6,229.0 L388.3,222.8 L391.9,227.3 L395.6,233.4 L399.3,226.8 L402.9,225.2 L406.6,219.2 L410.3,219.0 L413.9,221.6 L417.6,221.0 L421.2,217.7 L424.9,221.9 L428.6,225.2 L432.2,227.0 L435.9,225.2 L439.6,219.1 L443.2,217.6 L446.9,218.0 L450.5,213.8 L454.2,210.4 L457.9,208.6 L461.5,213.3 L465.2,212.7 L468.9,211.1 L472.5,206.1 L476.2,207.6 L479.9,211.7 L483.5,215.5 L487.2,209.8 L490.8,216.2 L494.5,219.3 L498.2,221.6 L501.8,223.1 L505.5,223.6 L509.2,221.3 L512.8,221.1 L516.5,227.8 L520.1,223.9 L523.8,222.8 L527.5,222.0 L531.1,226.5 L534.8,231.3 L538.5,234.0 L542.1,234.5 L545.8,233.2 L549.5,233.9 L553.1,241.2 L556.8,256.3 L560.4,264.8 L564.1,265.6 L567.8,274.8 L571.4,275.4 L575.1,267.4 L578.8,268.2 L582.4,272.6 L586.1,273.3 L589.7,266.5 L593.4,266.6 L597.1,263.8 L600.7,259.6 L604.4,257.7 L608.1,259.8 L611.7,263.6 L615.4,268.7 L619.0,266.7 L622.7,264.3 L626.4,267.5 L630.0,265.2 L633.7,269.4 L637.4,274.8 L641.0,278.9 L644.7,277.9 L648.4,278.2 L652.0,279.6 L655.7,277.4 L659.3,282.7 L663.0,278.2 L666.7,273.2 L670.3,269.9 L674.0,268.0 L677.7,266.4 L681.3,265.1 L685.0,267.3 L688.6,270.8 L692.3,267.8 L696.0,264.7 L699.6,265.9 L703.3,266.0 L707.0,270.7 L710.6,261.9 L714.3,262.8 L717.9,265.8 L721.6,265.5 L725.3,262.6 L728.9,262.9 L732.6,261.2 L736.3,257.0 L739.9,258.4 L743.6,261.7 L747.3,264.8 L750.9,264.1 L754.6,260.7 L758.2,266.1 L761.9,265.5 L765.6,265.3 L769.2,262.7 L772.9,268.9 L776.6,269.1 L780.2,266.7 L783.9,266.8 L787.5,264.9 L791.2,263.1 L794.9,264.2 L798.5,262.3 L802.2,262.1 L805.9,262.3 L809.5,265.4 L813.2,266.6 L816.8,267.0 L820.5,266.9 L824.2,268.4 L827.8,268.2 L831.5,268.8 L835.2,263.5 L838.8,262.9 L842.5,247.9 L846.2,236.0 L849.8,218.7 L853.5,222.8 L857.1,220.7 L860.8,216.6 L864.5,218.1 L868.1,216.5 L871.8,212.5 L875.5,220.3 L879.1,219.1 L882.8,220.8 L886.4,217.9 L890.1,221.6 L893.8,222.0 L897.4,209.2 L901.1,214.4 L904.8,213.9 L908.4,212.2 L912.1,216.2 L915.8,218.3 L919.4,218.8 L923.1,224.5 L926.7,222.3 L930.4,222.2 L934.1,223.6 L937.7,219.2 L941.4,227.5 L945.1,225.6 L948.7,224.9 L952.4,210.4 L956.0,209.3 L959.7,209.5 L963.4,191.8 L967.0,193.2 L970.7,199.0 L974.4,199.0 L978.0,200.0 L981.7,198.9 L985.3,198.8 L989.0,202.0 L992.7,201.4 L996.3,201.5 L1000.0,197.5"/>
+      <polyline class="ln-rn" points="0.0,184.6 3.7,184.6 7.3,184.6 11.0,184.6 14.7,184.6 18.3,184.6 22.0,184.6 25.6,184.6 29.3,184.6 33.0,184.6 36.6,184.6 40.3,184.6 44.0,184.6 47.6,184.6 51.3,184.6 54.9,184.6 58.6,184.6 62.3,184.6 65.9,184.6 69.6,184.6 73.3,181.2 76.9,180.8 80.6,180.7 84.2,181.9 87.9,190.2 91.6,184.6 95.2,184.6 98.9,184.6 102.6,184.6 106.2,184.6 109.9,184.6 113.6,184.6 117.2,184.6 120.9,184.6 124.5,184.6 128.2,184.6 131.9,149.5 135.5,155.4 139.2,150.6 142.9,151.4 146.5,151.4 150.2,151.4 153.8,151.4 157.5,151.4 161.2,151.4 164.8,151.4 168.5,151.4 172.2,151.4 175.8,156.4 179.5,153.8 183.2,148.9 186.8,149.1 190.5,150.7 194.1,164.9 197.8,167.7 201.5,149.0 205.1,151.3 208.8,159.0 212.5,153.7 216.1,159.4 219.8,144.9 223.4,144.9 227.1,124.0 230.8,124.0 234.4,124.0 238.1,128.5 241.8,135.2 245.4,122.7 249.1,115.1 252.7,115.1 256.4,115.1 260.1,115.1 263.7,115.1 267.4,115.1 271.1,115.1 274.7,115.1 278.4,115.1 282.1,115.1 285.7,115.1 289.4,115.1 293.0,115.1 296.7,98.9 300.4,98.9 304.0,98.9 307.7,98.9 311.4,98.9 315.0,99.0 318.7,101.1 322.3,96.7 326.0,88.3 329.7,89.2 333.3,96.1 337.0,95.7 340.7,93.8 344.3,84.0 348.0,84.0 351.6,84.0 355.3,84.0 359.0,84.0 362.6,84.0 366.3,84.0 370.0,84.0 373.6,84.0 377.3,84.0 381.0,84.0 384.6,84.0 388.3,84.0 391.9,84.0 395.6,84.0 399.3,84.0 402.9,84.0 406.6,84.0 410.3,84.0 413.9,84.0 417.6,84.0 421.2,84.0 424.9,84.0 428.6,84.0 432.2,87.0 435.9,84.2 439.6,74.7 443.2,74.7 446.9,74.7 450.5,74.7 454.2,74.7 457.9,74.7 461.5,74.7 465.2,74.7 468.9,74.7 472.5,74.7 476.2,74.7 479.9,74.7 483.5,74.7 487.2,74.7 490.8,74.7 494.5,74.7 498.2,74.7 501.8,77.1 505.5,78.1 509.2,74.5 512.8,74.2 516.5,74.2 520.1,67.8 523.8,66.2 527.5,64.9 531.1,72.2 534.8,80.1 538.5,84.5 542.1,85.3 545.8,83.1 549.5,84.2 553.1,96.2 556.8,96.2 560.4,96.2 564.1,96.2 567.8,96.2 571.4,97.1 575.1,81.8 578.8,81.8 582.4,81.8 586.1,81.8 589.7,81.8 593.4,81.8 597.1,81.8 600.7,81.8 604.4,81.8 608.1,81.8 611.7,81.8 615.4,81.8 619.0,81.8 622.7,81.8 626.4,81.8 630.0,81.8 633.7,81.8 637.4,81.8 641.0,81.8 644.7,81.8 648.4,81.8 652.0,81.8 655.7,81.8 659.3,81.8 663.0,72.3 666.7,72.3 670.3,72.3 674.0,72.3 677.7,72.3 681.3,72.3 685.0,72.3 688.6,72.3 692.3,72.3 696.0,72.3 699.6,72.3 703.3,72.3 707.0,72.3 710.6,72.3 714.3,72.3 717.9,72.3 721.6,72.3 725.3,72.3 728.9,72.3 732.6,72.3 736.3,72.3 739.9,72.3 743.6,72.3 747.3,72.3 750.9,72.3 754.6,72.3 758.2,72.3 761.9,72.3 765.6,72.3 769.2,72.3 772.9,72.3 776.6,72.3 780.2,72.3 783.9,72.3 787.5,72.3 791.2,72.3 794.9,72.3 798.5,72.3 802.2,72.3 805.9,72.3 809.5,72.3 813.2,72.3 816.8,73.1 820.5,73.0 824.2,75.8 827.8,75.5 831.5,76.6 835.2,66.3 838.8,66.3 842.5,66.3 846.2,66.3 849.8,66.3 853.5,66.3 857.1,66.3 860.8,66.3 864.5,66.3 868.1,66.3 871.8,66.3 875.5,66.3 879.1,66.3 882.8,66.3 886.4,66.3 890.1,66.3 893.8,66.8 897.4,46.1 901.1,46.1 904.8,46.1 908.4,46.1 912.1,46.1 915.8,46.1 919.4,46.1 923.1,55.5 926.7,51.8 930.4,51.5 934.1,53.8 937.7,46.4 941.4,60.2 945.1,57.1 948.7,55.9 952.4,31.5 956.0,31.5 959.7,31.5 963.4,31.5 967.0,31.5 970.7,31.5 974.4,31.5 978.0,31.5 981.7,31.5 985.3,31.5 989.0,31.5 992.7,31.5 996.3,30.6 1000.0,22.9"/>
+    </svg>
+    <i class="ln-tip rn" style="top:7.63%"><small>Rede Neural</small><b>+56,1%</b></i>
+    <i class="ln-tip btc" style="top:65.83%"><small>Bitcoin</small><b>−4,4%</b></i>
+    <span class="ln-y0" style="top:61.53%">0%</span>
+  </div>
+  <div class="ln-x"><span style="left:0">jan</span><span style="left:32.97%">abr</span><span style="left:100%">out</span></div>
+</figure></div></div>
+  </div>
+  <p class="notes"><b>Prós:</b> mostra o caminho e o cruzamento; menor mudança em relação ao que está publicado. <b>Contra:</b> ainda é um gráfico de linha em 390px; a mudança de posição (Bitcoin ↔ dólar) deixa de ser visível. Se quiser manter essa informação, ela vai para o passo 02.</p>
+</section>
+</body></html>
