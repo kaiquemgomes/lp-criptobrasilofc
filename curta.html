@@ -731,7 +731,27 @@
       .hc-x span { font-size: 9px; top: 2px; }
       .hero-assure { margin-top: 10px; padding-top: 10px; gap: 4px; }
       .hero-assure span { font-size: 12px; }
-      .hero-form .hero-assure { margin: 10px 0 0; padding: 0; border: 0; }
+    }
+    /* [K 05/10 v3] layout headline + form + garantias + gráfico */
+    .hero4-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); grid-template-areas: "head form" "proof form"; gap: 28px 28px; align-items: start; }
+    .h4-head { grid-area: head; align-self: end; } .h4-form { grid-area: form; } .h4-proof { grid-area: proof; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+    .hero4 .hero-h1 { font-size: clamp(30px, 3.4vw, 50px); }
+    .hero4 .hero-form { padding: 30px 28px 22px; }
+    .hero4 .hero-assure { flex-direction: row; flex-wrap: wrap; gap: 8px 28px; margin: 0; padding: 0; border: 0; }
+    .hero4 .hero-assure span { font-size: 14px; color: var(--t1); }
+    @media (max-width: 960px) {
+      .hero4-grid { grid-template-columns: minmax(0, 1fr); grid-template-areas: "head" "form" "proof"; }
+    }
+    @media (max-width: 768px) {
+      .hero4 { padding: 82px 0 40px; }
+      .hero4-grid { gap: 14px; }
+      .hero4 .hero-h1 { font-size: 27px; line-height: 1.1; letter-spacing: -0.04em; }
+      .hero4 .hero-h1 span { margin-top: 6px; }
+      .hero4 .hero-form { padding: 18px 16px 12px; border-radius: 18px; }
+      .h4-proof { gap: 10px; margin-top: 4px; }
+      .hero4 .hero-assure { flex-direction: column; gap: 6px; }
+      .hero4 .hero-assure span { font-size: 13.5px; }
+      .hero4 .hc-plot { height: 130px; }
     }
     @media (max-width: 380px) {
       .hero3 { padding-top: 78px; }
@@ -756,12 +776,19 @@
 <main>
 
 
-<section id="hero" class="hero hero3">
+<section id="hero" class="hero hero3 hero4">
   <div class="atmo y" style="width:900px;height:700px;left:-260px;top:-260px"></div>
   <div class="atmo a" style="width:700px;height:600px;right:-200px;top:120px"></div>
   <div class="wrap">
-    <div class="hero3-grid">
-      <div class="hero3-main">
+    <div class="hero4-grid">
+      <div class="h4-head"><h1 class="hero-h1">De janeiro a outubro de 2026, o Bitcoin caiu 4,4%.
+            <span>A Rede Neural Vault rendeu 56,1%.</span></h1></div>
+      <div class="card hero-form h4-form">
+        <div class="glow y" style="width:420px;height:300px;right:-120px;top:-140px"></div>
+        <div id="formulario" class="form-mount" data-origem="hero"></div>
+      </div>
+      <div class="h4-proof">
+        <p class="hero-assure"><span><b>◆</b>O dinheiro fica na sua corretora, no seu nome.</span><span><b>◆</b>Sem fidelidade nem período mínimo.</span></p>
         <figure class="hero-chart" aria-label="Crescimento do capital: de janeiro a outubro de 2026, a Rede Neural Vault acumulou +56,1% e o Bitcoin caiu 4,4%">
           <figcaption class="hc-legend">
             <span class="hc-l-btcpos"><i></i>Em Bitcoin</span>
@@ -783,13 +810,6 @@
           </div>
           <div class="hc-x" aria-hidden="true"><span style="left:0.00%">jan</span><span style="left:11.36%">fev</span><span style="left:21.61%">mar</span><span style="left:32.97%">abr</span><span style="left:43.96%">mai</span><span style="left:55.31%">jun</span><span style="left:66.30%">jul</span><span style="left:77.66%">ago</span><span style="left:89.01%">set</span><span style="left:100.00%">out</span></div>
         </figure>
-        <h1 class="hero-h1">De janeiro a outubro de 2026, o Bitcoin caiu 4,4%.
-            <span>A Rede Neural Vault rendeu 56,1%.</span></h1>
-      </div>
-      <div class="card hero-form">
-        <div class="glow y" style="width:420px;height:300px;right:-120px;top:-140px"></div>
-        <div id="formulario" class="form-mount" data-origem="hero"></div>
-        <p class="hero-assure"><span><b>◆</b>O dinheiro fica na sua corretora, no seu nome.</span><span><b>◆</b>Sem fidelidade nem período mínimo.</span></p>
       </div>
     </div>
   </div>
@@ -1267,12 +1287,6 @@ accs.forEach(item => item.querySelector('.acc-trigger').addEventListener('click'
 const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } }),
   { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
-</script>
-<script>
-document.querySelectorAll('.hero-form .hero-assure').forEach(a => {
-  const pv = a.parentElement.querySelector('.lf-step[data-step="1"] .lf-actions');
-  if (pv) pv.after(a);
-});
 </script>
 </body>
 </html>
