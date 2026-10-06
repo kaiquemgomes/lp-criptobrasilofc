@@ -746,6 +746,32 @@
       .ln-x { height: 16px; margin: 6px 96px 0 20px; } .ln-x span { font-size: 9.5px; }
     }
       .res-top.solo { grid-template-columns: minmax(0, 1fr); }
+  
+    /* ===== [K 05/10 noite] ajustes ===== */
+    .lead strong.hl-y { color: var(--yellow); font-weight: 700; }
+    .hero4 .h4-form { align-self: center; }
+    .lf-select { position: relative; }
+    .lf-select select { -webkit-appearance: none; appearance: none; width: 100%; height: 52px; padding: 0 44px 0 16px; border-radius: 12px; cursor: pointer;
+      color: var(--white); font: 400 16px var(--f-body); background: rgba(0,0,0,.35); border: 1px solid var(--line-2);
+      box-shadow: inset 0 1px 2px rgba(0,0,0,.4); transition: border-color .2s ease, box-shadow .2s ease; text-overflow: ellipsis; }
+    .lf-select::after { content: ""; position: absolute; right: 18px; top: 50%; width: 8px; height: 8px; margin-top: -6px; pointer-events: none;
+      border-right: 1.5px solid var(--yellow); border-bottom: 1.5px solid var(--yellow); transform: rotate(45deg); }
+    .lf-select select:focus { outline: none; border-color: rgba(239,204,45,.8); box-shadow: 0 0 0 4px rgba(239,204,45,.12); }
+    .lf-select select.empty { color: var(--t4); }
+    .lf-select select option { background: #121216; color: #f2f2f2; }
+    .lf-select select option[value=""] { color: #74747b; }
+    .lf-step[data-step="2"] .lf-select + .lf-group-error + .lf-q { margin-top: 18px; }
+    @media (min-width: 961px) {
+      .res-top.split { grid-template-columns: minmax(0, 1fr) minmax(0, 320px); align-items: stretch; }
+      .res-top.split .chart { height: auto; min-height: 300px; }
+      .res-top.split .ops-card { grid-column: auto; grid-template-columns: minmax(0, 1fr); grid-auto-rows: 1fr; }
+      .res-top.split .ops-z { padding: 26px 26px; gap: 14px; justify-content: center; }
+      .res-top.split .ops-z + .ops-z { border-left: 0; border-top: 1px solid var(--line); }
+      .res-top.split .ops-card .opdots { grid-template-columns: repeat(8, 12px); }
+    }
+    @media (max-width: 960px) {
+      .res-top.split { grid-template-columns: minmax(0, 1fr); }
+    }
   </style>
 </head>
 <body data-variante="copy-ogilvy2">
@@ -947,19 +973,16 @@
     <div class="sec-head">
       <span class="tag fade-in"><i></i>Resultados em 2026</span>
       <h2 class="h2 fade-in">Das 16 operações feitas em 2026, 14 fecharam no positivo.</h2>
-      <p class="lead fade-in d1">De janeiro a outubro, a Rede Neural Vault fechou 16 trocas entre Bitcoin e dólar. As 14 vencedoras renderam 3,7% em média. As 2 perdedoras custaram 2,8% em média. O resultado acumulado foi de +56,1%, num período em que o Bitcoin caiu 4,4%.</p>
+      <p class="lead fade-in d1">De janeiro a outubro, a Rede Neural Vault fechou 16 trocas entre Bitcoin e dólar. As 14 vencedoras renderam 3,7% em média. As 2 perdedoras custaram 2,8% em média. <strong class="hl-y">O resultado acumulado foi de +56,1%, num período em que o Bitcoin caiu 4,4%.</strong></p>
     </div>
 
-    <div class="res-top solo">
+    <div class="res-top solo split">
       <div class="card chart-card fade-in d1">
         <div class="glow w" style="width:400px;height:300px;right:-100px;top:-120px"></div>
         <h3>Rentabilidade mês a mês</h3>
         <p>Resultado da Rede Neural Vault em cada mês de 2026. <span class="g">Verde</span> é mês positivo, <span class="r">vermelho</span> é mês negativo. De janeiro a março, simulação. De abril em diante, capital real.</p>
         <div class="chart" id="chart" role="img" aria-label="Rentabilidade mensal da Rede Neural Vault em 2026: janeiro −0,01%, fevereiro +11,52%, março +16,34% (simulação), abril +3,96%, maio +2,52%, junho −1,91%, julho +2,43%, agosto +1,50%, setembro +8,57%, outubro +1,93%."></div>
       </div>
-    </div>
-
-    <div class="stats">
       <div class="card ops-card fade-in">
         <div class="glow y" style="width:420px;height:260px;left:30%;top:-150px"></div>
         <div class="ops-z ops-count">
@@ -984,6 +1007,8 @@
         </div>
       </div>
     </div>
+
+
 
     <p class="disclaimer fade-in">Resultados de janeiro a outubro de 2026 (outubro parcial), líquidos de taxas. Janeiro a março são simulação (backtest): o resultado que o algoritmo teria obtido sobre dados históricos, sem capital real. De abril em diante, operações com capital real. Rentabilidade passada não é garantia de rentabilidade futura. Investimentos em criptoativos envolvem risco, inclusive de perda do capital investido.</p>
 
@@ -1115,22 +1140,10 @@
           <p class="lf-error" role="alert">Digite um e-mail válido.</p>
         </div>
         <p class="lf-q">Somando tudo (empresa, imóveis, participações e investimentos) seu patrimônio total hoje está em qual faixa?</p>
-        <div class="lf-options" role="radiogroup" data-group="patrimonio">
-          <label class="lf-opt"><input type="radio" value="Até R$ 500 mil" /><span>Até R$ 500 mil</span></label>
-          <label class="lf-opt"><input type="radio" value="R$ 500 mil a R$ 1 milhão" /><span>R$ 500 mil a R$ 1 milhão</span></label>
-          <label class="lf-opt"><input type="radio" value="R$ 1 milhão a R$ 5 milhões" /><span>R$ 1 milhão a R$ 5 milhões</span></label>
-          <label class="lf-opt"><input type="radio" value="R$ 5 milhões a R$ 10 milhões" /><span>R$ 5 milhões a R$ 10 milhões</span></label>
-          <label class="lf-opt"><input type="radio" value="Acima de R$ 10 milhões" /><span>Acima de R$ 10 milhões</span></label>
-        </div>
+        <div class="lf-select" data-group="patrimonio"><select class="empty" aria-label="Faixa de patrimônio total"><option value="" selected disabled>Selecione uma faixa</option><option value="Até R$ 500 mil">Até R$ 500 mil</option><option value="R$ 500 mil a R$ 1 milhão">R$ 500 mil a R$ 1 milhão</option><option value="R$ 1 milhão a R$ 5 milhões">R$ 1 milhão a R$ 5 milhões</option><option value="R$ 5 milhões a R$ 10 milhões">R$ 5 milhões a R$ 10 milhões</option><option value="Acima de R$ 10 milhões">Acima de R$ 10 milhões</option></select></div>
         <p class="lf-group-error" role="alert">Escolha uma faixa para continuar.</p>
         <p class="lf-q">Quanto você tem investido em cripto hoje?</p>
-        <div class="lf-options" role="radiogroup" data-group="cripto">
-          <label class="lf-opt"><input type="radio" value="Ainda não tenho cripto" /><span>Ainda não tenho cripto</span></label>
-          <label class="lf-opt"><input type="radio" value="Menos de R$ 100 mil" /><span>Menos de R$ 100 mil</span></label>
-          <label class="lf-opt"><input type="radio" value="R$ 100 mil a R$ 500 mil" /><span>R$ 100 mil a R$ 500 mil</span></label>
-          <label class="lf-opt"><input type="radio" value="R$ 500 mil a R$ 1 milhão" /><span>R$ 500 mil a R$ 1 milhão</span></label>
-          <label class="lf-opt"><input type="radio" value="Mais de R$ 1 milhão" /><span>Mais de R$ 1 milhão</span></label>
-        </div>
+        <div class="lf-select" data-group="cripto"><select class="empty" aria-label="Quanto você tem investido em cripto hoje"><option value="" selected disabled>Selecione uma faixa</option><option value="Ainda não tenho cripto">Ainda não tenho cripto</option><option value="Menos de R$ 100 mil">Menos de R$ 100 mil</option><option value="R$ 100 mil a R$ 500 mil">R$ 100 mil a R$ 500 mil</option><option value="R$ 500 mil a R$ 1 milhão">R$ 500 mil a R$ 1 milhão</option><option value="Mais de R$ 1 milhão">Mais de R$ 1 milhão</option></select></div>
         <p class="lf-group-error" role="alert">Escolha uma faixa para continuar.</p>
         <div class="lf-actions">
           <button type="submit" class="btn-primary">Quero falar com um consultor da Vault</button>
@@ -1226,7 +1239,7 @@ const CRM_ENDPOINT = '';
       inp.addEventListener('input', () => inp.closest('.lf-field').classList.remove('invalid')));
 
     const groupValue = name => {
-      const c = form.querySelector('[data-group="' + name + '"] input:checked');
+      const c = form.querySelector('[data-group="' + name + '"] select');
       return c ? c.value : '';
     };
     const groupError = name => form.querySelector('[data-group="' + name + '"]').nextElementSibling;
@@ -1239,8 +1252,8 @@ const CRM_ENDPOINT = '';
       });
       return ok;
     }
-    ['patrimonio', 'cripto'].forEach(g => form.querySelectorAll('[data-group="' + g + '"] input').forEach(r =>
-      r.addEventListener('change', () => groupError(g).classList.remove('show'))));
+    ['patrimonio', 'cripto'].forEach(g => form.querySelectorAll('[data-group="' + g + '"] select').forEach(r =>
+      r.addEventListener('change', () => { r.classList.toggle('empty', !r.value); groupError(g).classList.remove('show'); })));
 
     form.querySelectorAll('[data-next]').forEach(btn => btn.addEventListener('click', () => {
       if (current === 0 && validateStep1()) show(1);
